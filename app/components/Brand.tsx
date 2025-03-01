@@ -16,29 +16,39 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 const ambassadors = [
   {
-    name: "DARIO MARCHETTI",
-    role: "BRAND AMBASSADOR",
+    name: "DUCATI CORSE",
+    role: (
+      <span className="text-base special w-fit border-b lowercase border-black pr-4">
+        OFFICIAL ELECTRIC SCOOTER SUPPLIER 2022/2023-2024
+      </span>
+    ),
     description:
       "Dario Marchetti, former pro rider and Technical Director of the Ducati DRE Racetrack Academy and DRE Road.",
     image: "/ss1.webp",
   },
   {
-    name: "MARCO ROSSI",
-    role: "BRAND AMBASSADOR",
+    name: "DUCATI CORSE OFF-ROAD",
+    role: (
+      <span className="text-base  w-fit special border-b lowercase border-black pr-4">
+        OFFICIAL ELECTRIC SCOOTER SUPPLIER 2024
+      </span>
+    ),
     description: "Leading expert in electric motorcycle development with over 15 years of racing experience.",
-    image: "/ss2.webp",
-  },
-  {
-    name: "ELENA FERRARI",
-    role: "BRAND AMBASSADOR",
-    description: "Professional rider and sustainability advocate, pioneering electric racing competitions.",
     image: "/ss3.webp",
   },
   {
-    name: "ELENA FERRARI",
-    role: "BRAND AMBASSADOR",
-    description: "Professional rider and sustainability advocate, pioneering electric racing competitions.",
-    image: "/ss4.webp",
+    name: "JORGE LORENZO",
+    role: <span className="text-base special   w-fit border-b lowercase border-black pr-4">BRAND testimonial</span>,
+    description:
+      "The five time MotoGp World Champion, lifestyle king, beloved and followed by more than 1.8 million followers on instagram is the company's testimonial and spokesperson for its values.",
+    image: "/ss3.webp",
+  },
+  {
+    name: "DARIO MARCHETTI",
+    role: <span className="text-base  w-fit special border-b lowercase border-black pr-4">BRAND AMBASSADOR</span>,
+    description:
+      "Dario Marchetti, former pro rider and Technical Director of the Ducati DRE Racetrack Academy and DRE Road. ",
+    image: "/ss2.webp",
   },
 ];
 
@@ -48,14 +58,6 @@ export function BrandAmbassadors() {
 
   return (
     <section className={`relative brand-ambassadors ${styles.brandambassadors}`}>
-      <MaxWidthWrapper noPadding className="flex flex-col">
-        <div className="flex items-center justify-between">
-          <h2 className="specail mb-2 w-fit border-b border-input text-base font-light tracking-[0.2em]">
-            BRAND AMBASSADORS
-          </h2>
-        </div>
-      </MaxWidthWrapper>
-
       <MaxWidthWrapper noPadding className="relative  flex flex-col items-end">
         <div className="relative max-w-full lg:max-w-[77rem] overflow-hidden">
           <Swiper
@@ -80,8 +82,8 @@ export function BrandAmbassadors() {
           >
             {ambassadors.map((ambassador, i) => (
               <SwiperSlide className=" pb-6" key={i}>
-                <div className="grid grid-cols-1  lg:pb-0 pb-10 gap-8 md:grid-cols-2">
-                  <div className="relative  h-[80vh] w-full overflow-hidden">
+                <div className="bg-white h-full flex flex-col md:flex-row">
+                  <div className="relative  h-[300px] w-full  md:h-[580px] md:w-1/2   overflow-hidden">
                     <Image
                       fill
                       src={ambassador.image || "/placeholder.svg"}
@@ -89,13 +91,16 @@ export function BrandAmbassadors() {
                       className="h-full w-full object-cover"
                     />
                   </div>
-                  <div className="flex flex-col gap-5 justify-center">
-                    <h3 className="specail border-b-2 border-input w-fit special mb-2 text-sm font-light tracking-[0.2em] text-gray-600">
-                      {ambassador.role}
-                    </h3>
-                    <h2 className="mb-4 text-2xl lg:text-5xl font-bold tracking-tight">{ambassador.name}</h2>
-                    <p className="text-base text-gray-900">{ambassador.description}</p>
-                    <SkewedButton className="!w-fit mt-4">Learn more</SkewedButton>
+                  <div className="bg-white w-full  min-h-[400px] md:w-1/2  md:min-h-fit md:h-full">
+                    <div className="h-full flex flex-col justify-start gap-y-6 px-6 py-12 md:py-24">
+                      <div className="flex flex-col gap-5 justify-center">
+                        {ambassador.role}
+
+                        <h2 className="text-3xl font-bold  md:text-5xl ">{ambassador.name}</h2>
+                        <p className="text-base text-gray-900">{ambassador.description}</p>
+                        <SkewedButton className="!w-fit mt-4">Learn more</SkewedButton>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </SwiperSlide>

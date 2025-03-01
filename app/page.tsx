@@ -13,8 +13,8 @@ export default function Home() {
       <ModelRange />
       <BrandAmbassadors />
       <MaxWidthWrapper className="flex lg:mt-0 mt-10 flex-col gap-6 items-center">
-        <h2 className=" text-3xl lg:text-5xl font-bold text-black">GLOBAL LEADER IN ELECTRIC MOBILITY SOLUTIONS</h2>
-        <img src="/LOGO_VMOTO-10 (1).webp" className=" h-96 lg:w-full  lg:h-[100vh] w-full object-cover" alt="" />
+        <h2 className="text-3xl md:text-5xl font-bold uppercase">Global leader in electric mobility solutions</h2>{" "}
+        <img src="/LOGO_VMOTO-10 (1).webp" className="block h-full min-h-[450px]" alt="" />
         <p>
           As a leader in electric scooter manufacturing, we provide daily green mobility solutions for urban commuters
           and commercial operations worldwide. Plus, we always have promotions to make your switch to electric even
@@ -23,7 +23,7 @@ export default function Home() {
         <SkewedButton className=" mr-auto">Book A Test Ride</SkewedButton>
       </MaxWidthWrapper>
       <section className=" bg-black">
-        <MaxWidthWrapper noPadding className="flex relative lg:flex-row flex-col items-center">
+        <MaxWidthWrapper noPadding className="grid grid-cols-1 items-center md:grid-cols-2 gap-8">
           <div className="flex text-white flex-col gap-6">
             <h3 className=" text-3xl lg:text-5xl font-bold">VMOTO APP</h3>
             <p>For those who seek a connection with the world around them</p>
@@ -71,13 +71,8 @@ export default function Home() {
               </SkewedButton>
             </div>
           </div>
-          <div className=" w-full h-[50vh] lg:h-[81vh] relative">
-            <Image
-              src={"/Frame-1121_2024-12-11-163328_ysfv.webp"}
-              className=" object-contain object-right"
-              fill
-              alt="photo"
-            />
+          <div className=" w-full min-h-[450px] relative">
+            <img src={"/Frame-1121_2024-12-11-163328_ysfv.webp"} className=" object-contain object-right" alt="photo" />
           </div>
         </MaxWidthWrapper>
       </section>

@@ -8,29 +8,55 @@ import { SkewedButton } from "./ButtonCustom";
 import styles from "../HeroSlider.module.css"; // Import as a module
 const slides = [
   {
-    title: "ELECTRIFY YOUR WORLD",
+    title: "",
     image: "/slide1.jpg",
     cta: "DISCOVER THE ELECTRIC SOLUTION",
   },
   {
-    title: "SUSTAINABLE MOBILITY",
+    title: "",
     image: "/slide2.jpg",
-    cta: "EXPLORE OUR SOLUTIONS",
+    cta: "Watch the video",
   },
   {
-    title: "FUTURE OF TRANSPORT",
-    image: "/slide3.jpg",
+    title: "",
+    image: "/slide3.png",
     cta: "JOIN THE REVOLUTION",
+    logo: "/slide3logo.png",
+    content: (
+      <div>
+        <div className="prose porse-lg my-4 flex flex-col items-start max-w-none text-white">
+          <p className="flex flex-col items-start">100% ELECTRIC Enviable performance.</p>
+          <p className="flex flex-col items-start"> The B2B vehicle that never disappoints.</p>
+        </div>
+      </div>
+    ),
   },
   {
-    title: "URBAN MOBILITY",
+    title: "",
     image: "/slide4.jpg",
     cta: "VIEW OUR RANGE",
+    logo: "/logoslide4.png",
+    content: (
+      <div>
+        <div className="prose porse-lg my-4 flex flex-col items-start max-w-none text-white">
+          <p className="flex flex-col items-start">100% ELECTRIC Enviable performance.</p>
+          <p className="flex flex-col items-start"> The B2B vehicle that never disappoints.</p>
+        </div>
+      </div>
+    ),
   },
   {
-    title: "ECO-FRIENDLY DELIVERY",
     image: "/slide5.jpg",
+    logo: "/logoslide5.png",
     cta: "BUSINESS SOLUTIONS",
+    content: (
+      <div>
+        <div className="prose porse-lg my-4 flex flex-col items-start max-w-none text-white">
+          <p className="flex flex-col items-start">100% ELECTRIC Enviable performance.</p>
+          <p className="flex flex-col items-start"> The B2B vehicle that never disappoints.</p>
+        </div>
+      </div>
+    ),
   },
   {
     title: "ELECTRIC PERFORMANCE",
@@ -111,7 +137,7 @@ const slides = [
 
 export function HeroSlider() {
   return (
-    <div className={` ${styles.heroSlider}  relative heroSlider special h-[100vh] w-full`}>
+    <div className={` ${styles.heroSlider}  relative heroSlider  h-[100vh] w-full`}>
       <Swiper
         modules={[Autoplay, Pagination]}
         pagination={{
@@ -136,8 +162,10 @@ export function HeroSlider() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
               <div className="absolute bottom-20 left-24 flex flex-col items-start justify-center px-4 text-center">
+                {slide.logo && <img className=" h-[35px]" src={slide.logo} />}
                 <h1 className="mb-8 text-2xl font-bold tracking-[0.2em] text-white sm:text-4xl">{slide.title}</h1>
-                <SkewedButton className="group font-semibold relative  special text-sm  text-black transition-transform hover:scale-105">
+                {slide.content}
+                <SkewedButton className="group font-semibold relative   text-sm  text-black transition-transform hover:scale-105">
                   {slide.cta}
                 </SkewedButton>
               </div>

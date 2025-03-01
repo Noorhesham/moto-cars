@@ -50,7 +50,7 @@ export function ModelRange() {
   return (
     <section className="relative py-16">
       <MaxWidthWrapper noPadding className="flex flex-col">
-        <h2 className="specail mb-2 w-fit border-b border-input text-base font-light tracking-[0.2em]">MODEL RANGE</h2>
+        <h2 className="specail mb-5 w-fit border-b special  border-input text-base font-light tracking-[0.2em]">MODEL RANGE</h2>
         <div className="flex items-center justify-between">
           {/* Mobile Select */}
           <div className="md:hidden w-[200px]">
@@ -61,7 +61,7 @@ export function ModelRange() {
               <SelectContent>
                 {categories.map((category) => (
                   <SelectItem key={category} value={category}>
-                    <span className="font-semibold special">{category}</span>
+                    <span className="font-semibold ">{category}</span>
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -81,7 +81,7 @@ export function ModelRange() {
                   activeCategory === category && "before:bg-cyan-200 hover:before:bg-cyan-300"
                 )}
               >
-                <span className="relative font-semibold special z-10">{category}</span>
+                <span className="relative font-semibold  z-10">{category}</span>
               </button>
             ))}
           </div>
@@ -107,7 +107,7 @@ export function ModelRange() {
         </div>
       </MaxWidthWrapper>
 
-      <div  className="relative flex flex-col overflow-hidden items-end">
+      <div className="relative flex flex-col overflow-hidden items-end">
         <div className="relative max-w-full   lg:mr-[-9rem] overflow-hidden">
           <Swiper
             modules={[Navigation, Autoplay]}
@@ -117,6 +117,7 @@ export function ModelRange() {
             slidesPerView={1}
             spaceBetween={32}
             loop={true}
+            centeredSlides={true}
             speed={800}
             autoplay={{
               delay: 3000,
@@ -127,7 +128,7 @@ export function ModelRange() {
                 slidesPerView: 2,
               },
               1024: {
-                slidesPerView: 3.4,
+                slidesPerView: 3.8,
               },
             }}
             className="!overflow-visible"

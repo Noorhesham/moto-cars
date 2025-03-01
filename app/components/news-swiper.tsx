@@ -58,8 +58,8 @@ export function NewsSlider() {
 
   return (
     <section className={` ${styles.heroSlider} heroSlider relative py-16`}>
-      <MaxWidthWrapper className="flex flex-col">
-        <h3 className="specail mb-2 w-fit border-b border-input text-base font-light tracking-[0.2em]">NEWS</h3>
+      <MaxWidthWrapper noPadding className="flex flex-col">
+        <h3 className="special mb-2 w-fit border-b border-black text-base font-light tracking-[0.2em]">NEWS</h3>
         <h2 className=" mb-4 lg:mb-8 text-3xl lg:text-5xl font-bold">LATEST NEWS</h2>
 
         <div className="relative  max-w-full overflow-hidden">
