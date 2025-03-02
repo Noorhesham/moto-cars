@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
 import MaxWidthWrapper from "./MaxWidthWrapper";
+import { Link } from "@/i18n/routing";
 
 const socialLinks = [
   { icon: "/Instagram.svg", href: "https://www.instagram.com/vmotoofficial", label: "Instagram" },

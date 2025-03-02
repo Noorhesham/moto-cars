@@ -14,45 +14,8 @@ import { SkewedButton } from "./ButtonCustom";
 import styles from "../brand.module.css"; // Import as a module
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-const ambassadors = [
-  {
-    name: "DUCATI CORSE",
-    role: (
-      <span className="text-base special w-fit border-b lowercase border-black pr-4">
-        OFFICIAL ELECTRIC SCOOTER SUPPLIER 2022/2023-2024
-      </span>
-    ),
-    description:
-      "Dario Marchetti, former pro rider and Technical Director of the Ducati DRE Racetrack Academy and DRE Road.",
-    image: "/ss1.webp",
-  },
-  {
-    name: "DUCATI CORSE OFF-ROAD",
-    role: (
-      <span className="text-base  w-fit special border-b lowercase border-black pr-4">
-        OFFICIAL ELECTRIC SCOOTER SUPPLIER 2024
-      </span>
-    ),
-    description: "Leading expert in electric motorcycle development with over 15 years of racing experience.",
-    image: "/ss3.webp",
-  },
-  {
-    name: "JORGE LORENZO",
-    role: <span className="text-base special   w-fit border-b lowercase border-black pr-4">BRAND testimonial</span>,
-    description:
-      "The five time MotoGp World Champion, lifestyle king, beloved and followed by more than 1.8 million followers on instagram is the company's testimonial and spokesperson for its values.",
-    image: "/ss3.webp",
-  },
-  {
-    name: "DARIO MARCHETTI",
-    role: <span className="text-base  w-fit special border-b lowercase border-black pr-4">BRAND AMBASSADOR</span>,
-    description:
-      "Dario Marchetti, former pro rider and Technical Director of the Ducati DRE Racetrack Academy and DRE Road. ",
-    image: "/ss2.webp",
-  },
-];
 
-export function BrandAmbassadors() {
+export function BrandAmbassadors({ ambassadors }: { ambassadors?: any[] }) {
   //@ts-ignore
   const swiperRef = React.useRef<SwiperType>();
 
@@ -95,10 +58,10 @@ export function BrandAmbassadors() {
                     <div className="h-full flex flex-col justify-start gap-y-6  px-0 lg:px-6 py-12 md:py-24">
                       <div className="flex flex-col gap-5 justify-center">
                         {ambassador.role}
-
                         <h2 className="text-3xl font-bold  md:text-5xl ">{ambassador.name}</h2>
+                        {ambassador.strong && ambassador.strong}
                         <p className="text-base text-gray-900">{ambassador.description}</p>
-                        <SkewedButton className="!w-fit mt-4">Learn more</SkewedButton>
+                        {!ambassador.strong && <SkewedButton className="!w-fit mt-4">Learn more</SkewedButton>}
                       </div>
                     </div>
                   </div>

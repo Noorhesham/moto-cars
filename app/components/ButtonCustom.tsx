@@ -44,11 +44,12 @@ export interface SkewedButtonProps
 }
 
 const SkewedButton = React.forwardRef<HTMLButtonElement, SkewedButtonProps>(
-  ({ className, variant, size, skew, children, unskewText = true, href, ...props }, ref) => {
+  ({ className, variant, size, skew, children, unskewText = true, href, onClick, ...props }, ref) => {
     const Comp = href ? "a" : "button";
 
     return (
       <button
+        onClick={onClick}
         className={cn(
           "relative px-3 lg:px-6 py-3 text-sm duration-200 transition-all",
           "before:absolute group  hover:before:bg-gray-200 before:duration-200 before:inset-0 before:-skew-x-12  before:bg-cyan-200",

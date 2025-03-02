@@ -1,4 +1,22 @@
 export const logos = ["/logoveichles1.svg", "logoveichles2.svg", "logoveichles3.svg"];
+export const vehicles = [
+  "CITI",
+  "CPx",
+  "CPx Explorer",
+  "CPx PRO",
+  "CPx-D",
+  "CUX Pro",
+  "OFF-R",
+  "ON-R",
+  "Stash",
+  "TC Max",
+  "TC Wanderer PRO",
+  "TS Street Hunter Pro",
+  "VS1",
+  "VS2 CITI",
+  "VS3",
+];
+
 export const vehicleCategories = {
   "E-MOTO": [
     { name: "TC WANDERER PRO", image: "/tc-wanderer-pro.png" },

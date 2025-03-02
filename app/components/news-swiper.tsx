@@ -13,46 +13,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import styles from "../HeroSlider.module.css"; // Import as a module
 
-const news = [
-  {
-    title: "EICMA 2024",
-    date: "Nov 2024",
-    image: "/news1.webp",
-    link: "/news/eicma-2024",
-  },
-  {
-    title: "Vmoto and Ebixon: a great success for the launch event in Malaysia.",
-    date: "May 2024",
-    image: "/news2.webp",
-    link: "/news/vmoto-ebixon-launch",
-  },
-  {
-    title: "Vmoto to be Official Electric Scooter Supplier of EICMA Riding Fest.",
-    date: "Apr 2024",
-    image: "/news3.webp",
-    link: "/news/eicma-riding-fest",
-  },
-  {
-    title: "New Partnership Announcement",
-    date: "Mar 2024",
-    image: "/news4.webp",
-    link: "/news/partnership",
-  },
-  {
-    title: "Sustainable Urban Mobility Solutions",
-    date: "Feb 2024",
-    image: "/news5.webp",
-    link: "/news/sustainable-mobility",
-  },
-  {
-    title: "Innovation in Electric Vehicle Technology",
-    date: "Jan 2024",
-    image: "/news6.webp",
-    link: "/news/innovation",
-  },
-];
-
-export function NewsSlider() {
+export function NewsSlider({ news }: { news: any }) {
   //@ts-ignore
   const swiperRef = React.useRef<SwiperType>();
 
