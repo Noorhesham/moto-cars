@@ -1,13 +1,10 @@
 import type { NextConfig } from "next";
+import createNextIntlPlugin from "next-intl/plugin";
 
+const withNextIntl = createNextIntlPlugin();
 const nextConfig: NextConfig = {
-  /* config options here */
-  images: {
-    unoptimized: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  typescript: { ignoreBuildErrors: true },
+  images: { unoptimized: true },
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

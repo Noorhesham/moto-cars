@@ -50,7 +50,7 @@ const SkewedButton = React.forwardRef<HTMLButtonElement, SkewedButtonProps>(
     return (
       <button
         className={cn(
-          "relative px-6 py-3 text-sm duration-200 transition-all",
+          "relative px-3 lg:px-6 py-3 text-sm duration-200 transition-all",
           "before:absolute group  hover:before:bg-gray-200 before:duration-200 before:inset-0 before:-skew-x-12  before:bg-cyan-200",
           className
         )}

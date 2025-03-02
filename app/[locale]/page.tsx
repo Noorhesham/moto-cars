@@ -1,10 +1,10 @@
 import Image from "next/image";
-import { HeroSlider } from "./components/MainSlider";
-import { ModelRange } from "./components/ModalCustom";
-import { BrandAmbassadors } from "./components/Brand";
-import { SkewedButton } from "./components/ButtonCustom";
-import MaxWidthWrapper from "./components/MaxWidthWrapper";
-import { NewsSlider } from "./components/news-swiper";
+import { HeroSlider } from "../components/MainSlider";
+import { ModelRange } from "../components/ModalCustom";
+import { BrandAmbassadors } from "../components/Brand";
+import { SkewedButton } from "../components/ButtonCustom";
+import MaxWidthWrapper from "../components/MaxWidthWrapper";
+import { NewsSlider } from "../components/news-swiper";
 
 export default function Home() {
   return (
@@ -12,9 +12,9 @@ export default function Home() {
       <HeroSlider />
       <ModelRange />
       <BrandAmbassadors />
-      <MaxWidthWrapper className="flex lg:mt-0 mt-10 flex-col gap-6 items-center">
+      <MaxWidthWrapper className="flex lg:my-0 my-10 lg:mt-0 mt-10 flex-col gap-6 items-center">
         <h2 className="text-3xl md:text-5xl font-bold uppercase">Global leader in electric mobility solutions</h2>{" "}
-        <img src="/LOGO_VMOTO-10 (1).webp" className="block h-full min-h-[450px]" alt="" />
+        <img src="/LOGO_VMOTO-10 (1).webp" className="block h-full object-cover min-h-[450px]" alt="" />
         <p>
           As a leader in electric scooter manufacturing, we provide daily green mobility solutions for urban commuters
           and commercial operations worldwide. Plus, we always have promotions to make your switch to electric even
@@ -24,10 +24,10 @@ export default function Home() {
       </MaxWidthWrapper>
       <section className=" bg-black">
         <MaxWidthWrapper noPadding className="grid grid-cols-1 items-center md:grid-cols-2 gap-8">
-          <div className="flex text-white flex-col gap-6">
+          <MaxWidthWrapper className="flex text-white flex-col gap-6">
             <h3 className=" text-3xl lg:text-5xl font-bold">VMOTO APP</h3>
             <p>For those who seek a connection with the world around them</p>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 lg:gap-4">
               <SkewedButton className="!text-black">
                 <div className="!flex items-center gap-2">
                   <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -70,7 +70,7 @@ export default function Home() {
                 </div>
               </SkewedButton>
             </div>
-          </div>
+          </MaxWidthWrapper>
           <div className=" w-full min-h-[450px] relative">
             <img src={"/Frame-1121_2024-12-11-163328_ysfv.webp"} className=" object-contain object-right" alt="photo" />
           </div>

@@ -72,11 +72,7 @@ export function Footer() {
               <div className="flex flex-col gap-4">
                 <div className="flex items-center gap-3">
                   {socialLinks.map((social) => (
-                    <Link
-                      key={social.label}
-                      href={social.href}
-                      className="text-sm font-semibold text-gray-100"
-                    >
+                    <Link key={social.label} href={social.href} className="text-sm font-semibold text-gray-100">
                       <img src={social.icon} className="h-12 " />
                       <span className="sr-only">{social.label}</span>
                     </Link>

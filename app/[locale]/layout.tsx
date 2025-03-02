@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import { MainNav } from "./components/MainNav";
-import { Footer } from "./components/Footer";
-
+import "../globals.css";
+import { MainNav } from "../components/MainNav";
+import { Footer } from "../components/Footer";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages, unstable_setRequestLocale } from "next-intl/server";
 export const metadata: Metadata = {
   title: "VMoto | Global leader in electric",
   description: "VMoto | Global leader in electric",
@@ -28,20 +29,27 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode; params: { locale: string };
 }>) {
+  const { locale } = await (params as any);
+  unstable_setRequestLocale(locale);
+
+  const messages = await getMessages();
   return (
     <html lang="en">
-      <body className={` antialiased`}>
-        <div className=" relative">
-          <MainNav />
-          {children}
-          <Footer />
-        </div>
-      </body>
+      <NextIntlClientProvider locale={locale} messages={messages} now={new Date()} timeZone="UTC">
+        <body className={` antialiased`}>
+          <div className=" relative">
+            <MainNav />
+            {children}
+            <Footer />
+          </div>
+        </body>
+      </NextIntlClientProvider>
     </html>
   );
 }
