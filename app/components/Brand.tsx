@@ -92,7 +92,7 @@ export function BrandAmbassadors() {
                     />
                   </div>
                   <div className="bg-white w-full  min-h-[400px] md:w-1/2  md:min-h-fit md:h-full">
-                    <div className="h-full flex flex-col justify-start gap-y-6 px-6 py-12 md:py-24">
+                    <div className="h-full flex flex-col justify-start gap-y-6  px-0 lg:px-6 py-12 md:py-24">
                       <div className="flex flex-col gap-5 justify-center">
                         {ambassador.role}
 

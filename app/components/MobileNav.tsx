@@ -14,6 +14,8 @@ export function MobileNav() {
   const [showBusiness, setShowBusiness] = React.useState(false);
   const [showDiscover, setShowDiscover] = React.useState(false);
 
+  const menuRef = React.useRef<HTMLDivElement>(null);
+
   const handleToggle = () => {
     setIsOpen(!isOpen);
     setShowVehicles(false);
@@ -48,6 +50,23 @@ export function MobileNav() {
     setShowDiscover(false);
   };
 
+  // Close the menu when clicking outside
+  React.useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      console.log(event.target, menuRef.current);
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+        setShowVehicles(false);
+        setShowBusiness(false);
+        setShowDiscover(false);
+      }
+    }
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
   const menuVariants = {
     hidden: { opacity: 0, y: -50 },
     visible: { opacity: 1, y: 0 },
@@ -61,7 +80,7 @@ export function MobileNav() {
   };
 
   return (
-    <div className="relative xl:hidden">
+    <div className="relative xl:hidden" ref={menuRef}>
       <Button variant="ghost" size="icon" onClick={handleToggle} className="xl:hidden">
         <svg
           width="24"
@@ -84,7 +103,7 @@ export function MobileNav() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="absolute right-0 mt-2 w-[97vw] bg-white shadow-lg z-50"
+            className="absolute -right-4 mt-2 w-[97vw] bg-white shadow-lg z-50"
             variants={menuVariants}
             initial="hidden"
             animate="visible"
