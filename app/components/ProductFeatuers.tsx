@@ -66,7 +66,7 @@ const features = [
 ];
 
 export function ProductFeatures() {
-  const swiperRef = React.useRef<SwiperType>();
+  const swiperRef = React.useRef<SwiperType>(null);
 
   return (
     <section className={`relative brand-ambassadors ${styles.brandambassadors}`}>
