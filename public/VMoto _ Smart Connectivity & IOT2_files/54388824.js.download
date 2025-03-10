@@ -1,0 +1,17 @@
+_iub.csRC = { consApiKey: 'hAmnAJfyCsWOMuVVNXMroEG206Ej4cKw' }
+_iub.csEnabled = true;
+_iub.csPurposes = [1,4,2,5,"sh","s"];
+_iub.cpUpd = 1727340057;
+_iub.csFeatures = {
+  geolocation_setting: true,
+  cookie_solution_white_labeling: 1,
+  rejection_recovery: false,
+  full_customization: true,
+  multiple_languages: true,
+  mobile_app_integration: false
+};
+_iub.csT = null;
+_iub.googleConsentModeV2 = true;
+_iub.totalNumberOfProviders = 4;
+_iub.csSiteConf = {"askConsentAtCookiePolicyUpdate":true,"countryDetection":true,"emailMarketing":{"theme":"dark"},"enableFadp":true,"enableLgpd":true,"enableUspr":true,"fadpApplies":true,"floatingPreferencesButtonDisplay":"bottom-right","lang":"en","perPurposeConsent":true,"preferenceCookie":{"expireAfter":180},"purposes":"5,4,3,2,1","siteId":3768903,"usprPurposes":"sd8","whitelabel":false,"cookiePolicyId":54388824,"banner":{"acceptButtonDisplay":true,"closeButtonDisplay":false,"customizeButtonDisplay":true,"explicitWithdrawal":true,"listPurposes":true,"ownerName":"Vmoto","position":"bottom","rejectButtonDisplay":true,"showPurposesToggles":true,"showTitle":false,"showTotalNumberOfProviders":true}};
+

@@ -135,7 +135,8 @@ const slides = [
   },
 ];
 
-export function HeroSlider() {
+export function HeroSlider({ propSlides }: { propSlides?: [{ image: string; cta?: string; title: string }] }) {
+  const slidesUsed = propSlides || slides;
   return (
     <div className={` ${styles.heroSlider}  relative heroSlider  h-[100vh] w-full`}>
       <Swiper
@@ -153,7 +154,7 @@ export function HeroSlider() {
         speed={600} // Faster transition speed
         className="h-full w-full"
       >
-        {slides.map((slide, index) => (
+        {slidesUsed.map((slide, index) => (
           <SwiperSlide key={index}>
             <div className="relative h-full w-full">
               <div
@@ -165,9 +166,11 @@ export function HeroSlider() {
                 {slide.logo && <img className=" h-[35px]" src={slide.logo} />}
                 <h1 className="mb-8 text-2xl font-bold tracking-[0.2em] text-white sm:text-4xl">{slide.title}</h1>
                 {slide.content}
-                <SkewedButton className="group font-semibold relative   text-sm  text-black transition-transform hover:scale-105">
-                  {slide.cta}
-                </SkewedButton>
+                {slide.cta && (
+                  <SkewedButton className="group font-semibold relative   text-sm  text-black transition-transform hover:scale-105">
+                    {slide.cta}
+                  </SkewedButton>
+                )}
               </div>
             </div>
           </SwiperSlide>

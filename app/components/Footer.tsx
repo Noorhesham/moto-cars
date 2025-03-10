@@ -3,8 +3,7 @@
 import Image from "next/image";
 import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
 import MaxWidthWrapper from "./MaxWidthWrapper";
-import { Link } from "@/i18n/routing";
-
+import Link from "next/link";
 const socialLinks = [
   { icon: "/Instagram.svg", href: "https://www.instagram.com/vmotoofficial", label: "Instagram" },
   { icon: "/Facebook.svg", href: "https://www.facebook.com/vmotosoco", label: "Facebook" },
@@ -30,7 +29,7 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="bg-black relative mt-40 text-white">
+    <footer className="bg-black w-full relative mt-40 text-white">
       {/* Newsletter Section */}
       <div className="-mt-4">
         <MaxWidthWrapper className="bg-cyan-200 w-full justify-between lg:flex-row flex-col gap-4 absolute -top-24 left-1/2 -translate-x-1/2 z-40 flex items-center p-6">

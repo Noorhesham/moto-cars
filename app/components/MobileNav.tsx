@@ -1,12 +1,13 @@
 "use client";
 
 import * as React from "react";
-import { Link } from "@/i18n/routing";
+
 import Image from "next/image";
 import { ChevronRight, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { logos, vehicleCategories, business, discover } from "../constants";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 export function MobileNav() {
   const [isOpen, setIsOpen] = React.useState(false);

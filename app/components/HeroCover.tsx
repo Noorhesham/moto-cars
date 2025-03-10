@@ -1,4 +1,5 @@
 import React from "react";
+import MaxWidthWrapper from "./MaxWidthWrapper";
 
 const HeroBanner = ({ src, title }: { src: string; title?: string }) => {
   return (
@@ -16,7 +17,7 @@ const HeroBanner = ({ src, title }: { src: string; title?: string }) => {
 
       <div className="absolute inset-0 bg-gradient-to-b from-transparent from-70% to-black to-100%"></div>
 
-      <div className="absolute inset-x-0 bottom-24 flex items-center justify-center w-full">
+      <MaxWidthWrapper noPadding className="absolute !p-0 inset-x-0 bottom-24 flex items-center justify-center w-full">
         <div className="px-4 sm:px-6 w-full">
           <div className="w-full max-w-screen-xl mx-auto">
             <div className="w-full max-w-3xl">
@@ -26,7 +27,7 @@ const HeroBanner = ({ src, title }: { src: string; title?: string }) => {
             </div>
           </div>
         </div>
-      </div>
+      </MaxWidthWrapper>
     </div>
   );
 };

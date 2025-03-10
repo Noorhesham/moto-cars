@@ -66,4 +66,9 @@ export const discover = [
     href: "/discover/sustainability",
     description: "Our commitment to a sustainable future.",
   },
+  {
+    title: "VMoto People",
+    href: "/vmoto-team",
+    description: "Our commitment to a sustainable future.",
+  },
 ];

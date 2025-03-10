@@ -33,7 +33,8 @@ export default async function RootLayout({
   children,
   params,
 }: Readonly<{
-  children: React.ReactNode; params: { locale: string };
+  children: React.ReactNode;
+  params: { locale: string };
 }>) {
   const { locale } = await (params as any);
   unstable_setRequestLocale(locale);
@@ -41,7 +42,7 @@ export default async function RootLayout({
   const messages = await getMessages();
   return (
     <html lang="en">
-      <NextIntlClientProvider locale={locale} messages={messages} now={new Date()} timeZone="UTC">
+      <NextIntlClientProvider locale={locale} messages={messages}>
         <body className={` antialiased`}>
           <div className=" relative">
             <MainNav />
