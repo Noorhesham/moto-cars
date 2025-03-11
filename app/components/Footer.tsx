@@ -29,36 +29,38 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="bg-black w-full relative mt-40 text-white">
+    <footer className="bg-black   mt-16 text-white">
+      <div className="relative px-4 sm:px-6 w-full">
+        <div className="w-full max-w-screen-xl mx-auto">
       {/* Newsletter Section */}
       <div className="-mt-4">
-        <MaxWidthWrapper className="bg-cyan-200 w-full justify-between lg:flex-row flex-col gap-4 absolute -top-24 left-1/2 -translate-x-1/2 z-40 flex items-center p-6">
+        <MaxWidthWrapper className="bg-cyan-200 w-full justify-between lg:flex-row flex-col gap-4   z-40 flex items-center p-6 text-black text-center md:text-left  max-w-screen-xl mx-auto  gap-y-6 md:flex-row  -translate-y-1/4">
           <h3 className="special text-xl font-light tracking-[0.2em] text-black">JOIN THE VMOTO NEWSLETTER</h3>
           <div className="flex flex-col w-fit items-start gap-4">
             <div className="flex gap-2 items-center">
-              <input type="email" placeholder="Email" className="rounded-md border border-gray-300 px-4 py-2" />
-              <button className="rounded-md bg-black px-6 py-2 text-white">SIGN UP</button>
+              <input type="email" placeholder="Email" className=" border border-gray-300 px-4 py-2" />
+              <button className=" whitespace-nowrap inline-flex h-[42px] items-center justify-center font-medium Metropolis bg-white px-6 py-2 text-black hover:[#d4d4d4]">SIGN UP</button>
             </div>
-            <label className="flex items-center gap-2 text-sm text-black">
-              <input type="checkbox" className="rounded border-gray-300" />I accept the Privacy Policy
+            <label className="flex items-center gap-2 text-base text-black Metropolis">
+              <input type="checkbox" className="rounded border-gray-300 " />I accept the Privacy Policy
             </label>
           </div>
         </MaxWidthWrapper>
       </div>
 
       {/* Main Footer */}
-      <MaxWidthWrapper className="py-16 !pt-32">
+      <MaxWidthWrapper className="py-16 !pt-[-36px]">
         <div className="flex flex-col gap-y-12 md:pt-[100px]">
           {/* Top Section with Logos */}
           <div className="flex justify-between">
             <Link href="https://vmoto.com/" className="-m-1.5 p-1.5">
               <span className="sr-only">Vmoto</span>
-              <Image src="/logo.png" alt="VMOTO" width={150} height={50} />
+              <Image src="/logo-2.webp" alt="VMOTO" width={170} height={50} />
             </Link>
             <div className="hidden md:block">
               <div className="flex gap-x-6">
                 <div>
-                  <Image src="/footer1.svg" alt="Ducati" width={150} height={50} />
+                  <Image src="/footer1.svg" alt="Ducati" width={79} height={30} />
                 </div>
               </div>
             </div>
@@ -83,7 +85,7 @@ export function Footer() {
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
                 {Object.entries(footerLinks).map(([category, links]) => (
                   <div key={category} className="flex flex-col gap-4">
-                    <h2 className="text-lg font-semibold text-cyan-400">{category}</h2>
+                    <h2 className="text-lg font-semibold text-cyan-200">{category}</h2>
                     {links.map((link) => (
                       <Link
                         key={link.name}
@@ -124,6 +126,8 @@ export function Footer() {
           </div>
         </div>
       </MaxWidthWrapper>
+        </div>
+        </div>
     </footer>
   );
 }

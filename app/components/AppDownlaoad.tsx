@@ -23,9 +23,9 @@ const AppDownlaoad = () => {
               </clipPath>
             </defs>
           </svg>
-          <p className=" text-nowrap">
-            Download The App <br />
-            Apple Store
+          <p className=" text-nowrap flex flex-col justify-center  relative ">
+           <div className=" normal-case text-base"> Download the app </div>
+            <span className="uppercase text-xs">Apple Store</span> 
           </p>
         </div>
       </SkewedButton>
@@ -38,10 +38,9 @@ const AppDownlaoad = () => {
               fill="black"
             ></path>
           </svg>
-          <p className=" text-nowrap">
-            Download The App
-            <br />
-            Play Store
+          <p className=" text-nowrap flex flex-col justify-center  relative ">
+           <div className=" normal-case text-base"> Download the app </div>
+            <span className="uppercase text-xs">Play Store</span> 
           </p>
         </div>
       </SkewedButton>

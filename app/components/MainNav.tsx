@@ -37,7 +37,7 @@ export function MainNav() {
         <div className="container flex h-20 justify-between items-center px-4">
           <div className="flex gap-4 items-center shrink-0">
             <Link href="/" className="-m-1.5 p-1.5">
-              <img src="/logo.png" className="h-8 w-auto" alt="VMOTO" />
+              <img src="/logo-2.webp" className="h-8 w-auto" alt="VMOTO" />
             </Link>
           </div>
 

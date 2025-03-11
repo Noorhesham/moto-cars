@@ -7,6 +7,8 @@ import MaxWidthWrapper from "../components/MaxWidthWrapper";
 import { NewsSlider } from "../components/news-swiper";
 import Heading from "../components/Heading";
 import AppDownlaoad from "../components/AppDownlaoad";
+import VmotoApp from "../components/VmotoApp";
+import SectionBookTest from "../components/SectionBookTest";
 const news = [
   {
     title: "EICMA 2024",
@@ -88,28 +90,8 @@ export default function Home() {
       <HeroSlider />
       <ModelRange />
       <BrandAmbassadors ambassadors={ambassadors} />
-      <MaxWidthWrapper className="flex lg:my-0 my-10 lg:mt-0 mt-10 flex-col gap-6 items-center">
-        <Heading text="Global leader in electric mobility solutions" />
-        <img src="/LOGO_VMOTO-10 (1).webp" className="block h-full object-cover min-h-[450px]" alt="" />
-        <p>
-          As a leader in electric scooter manufacturing, we provide daily green mobility solutions for urban commuters
-          and commercial operations worldwide. Plus, we always have promotions to make your switch to electric even
-          easier.
-        </p>
-        <SkewedButton className=" mr-auto">Book A Test Ride</SkewedButton>
-      </MaxWidthWrapper>
-      <section className=" bg-black">
-        <MaxWidthWrapper noPadding className="grid grid-cols-1 items-center md:grid-cols-2 gap-8">
-          <MaxWidthWrapper className="flex text-white flex-col gap-6">
-            <h3 className=" text-3xl lg:text-5xl font-bold">VMOTO APP</h3>
-            <p>For those who seek a connection with the world around them</p>
-            <AppDownlaoad />
-          </MaxWidthWrapper>
-          <div className=" w-full min-h-[450px] relative">
-            <img src={"/Frame-1121_2024-12-11-163328_ysfv.webp"} className=" object-contain object-right" alt="photo" />
-          </div>
-        </MaxWidthWrapper>
-      </section>
+      <SectionBookTest/>
+      <VmotoApp/>
       <NewsSlider news={news} />
     </main>
   );

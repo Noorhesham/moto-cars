@@ -40,6 +40,10 @@
 .special {
   font-family: "Nebula", sans-serif;
 }
+.Metropolis{
+  font-family: "Metropolis", sans-serif;
+
+}
 @layer base {
   :root {
     --background: 0 0% 100%;
