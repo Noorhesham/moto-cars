@@ -1,22 +1,4 @@
 "use server";
-<<<<<<< HEAD
-import Category from "../models/Category";
-
-import bcrypt from "bcryptjs";
-import { revalidatePath, revalidateTag } from "next/cache";
-import { ModelProps } from "../constant";
-
-import connect from "../utils/clientPromise";
-import AboutUs from "../models/About";
-import Place from "../models/Place";
-import Project from "../models/Project";
-
-const getModel = (modelName: ModelProps) => {
-  const models: Record<ModelProps, any> = {
-    AboutUs: AboutUs,
-    Place: Place,
-    Project: Project,
-=======
 
 import bcrypt from "bcryptjs";
 import { revalidatePath, revalidateTag } from "next/cache";
@@ -33,16 +15,11 @@ const getModel = (modelName: "Product" | "User" | "Blog") => {
     Product: Product,
     Blog: Blog,
     User: User,
->>>>>>> 845e2b7 (meow)
   };
   return models[modelName];
 };
 
-<<<<<<< HEAD
-export const createEntity = async (modelName: ModelProps, data: any) => {
-=======
 export const createEntity = async (modelName: "Product" | "User" | "Blog", data: any) => {
->>>>>>> 845e2b7 (meow)
   try {
     console.log(data, modelName);
     await connect();
@@ -63,16 +40,12 @@ export const createEntity = async (modelName: "Product" | "User" | "Blog", data:
   }
 };
 
-<<<<<<< HEAD
-export const updateEntity = async (modelName: ModelProps, id: string, data: any, customRevalidatePaths?: string[]) => {
-=======
 export const updateEntity = async (
   modelName: "Product" | "User" | "Blog",
   id: string,
   data: any,
   customRevalidatePaths?: string[]
 ) => {
->>>>>>> 845e2b7 (meow)
   try {
     await connect();
     console.log(data, id, modelName);
@@ -88,10 +61,6 @@ export const updateEntity = async (
     return { error: `Error updating ${modelName}`, details: error.message };
   }
 };
-<<<<<<< HEAD
-
-export const deleteEntity = async (modelName: ModelProps, id: string) => {
-=======
 export const deleteImage = async (publicId: string) => {
   try {
     const res = await cloudinary.uploader.destroy(publicId);
@@ -104,7 +73,6 @@ export const deleteImage = async (publicId: string) => {
 };
 
 export const deleteEntity = async (modelName: "Product" | "User" | "Blog", id: string) => {
->>>>>>> 845e2b7 (meow)
   "use server";
 
   try {
@@ -134,11 +102,7 @@ export const deleteEntity = async (modelName: "Product" | "User" | "Blog", id: s
 };
 
 export const getEntities = async (
-<<<<<<< HEAD
-  modelName: string,
-=======
   modelName: "Product" | "User" | "Blog",
->>>>>>> 845e2b7 (meow)
   options: {
     page: number;
     category?: string | null;
@@ -200,16 +164,12 @@ export const getEntities = async (
   }
 };
 
-<<<<<<< HEAD
-export const getEntity = async (modelName: ModelProps, id: string, locale: string, populateFields: string[] = []) => {
-=======
 export const getEntity = async (
   modelName: "Product" | "User" | "Blog",
   id: string,
   locale: string,
   populateFields: string[] = []
 ) => {
->>>>>>> 845e2b7 (meow)
   try {
     await connect();
 
