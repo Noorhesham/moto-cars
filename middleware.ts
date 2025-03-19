@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-import createMiddleware from "next-intl/middleware";
-
-export default createMiddleware({
-  locales: ["en", "ar"],
-  defaultLocale: "en",
-  localePrefix: "always", // Ensure all routes include locale
-});
-
-export const config = {
-  matcher: ["/((?!api|_next|.*\\..*).*)"], // Matches all routes except API & static files
-=======
 import { getToken } from "next-auth/jwt";
 import { NextRequest, NextResponse } from "next/server";
 import createMiddleware from "next-intl/middleware";
@@ -47,5 +35,4 @@ export async function middleware(req: NextRequest) {
 export const config = {
   // Match only internationalized pathnames
   matcher: ["/", "/(ar|en)/:path*", "/((?!.*\\..*|_next).*)"],
->>>>>>> 845e2b7 (meow)
 };
