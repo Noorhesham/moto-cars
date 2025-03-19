@@ -1,7 +1,21 @@
 import React from "react";
 import MaxWidthWrapper from "./MaxWidthWrapper";
+import { SkewedButton } from "./ButtonCustom";
+import Link from "next/link";
 
-const HeroBanner = ({ src, title }: { src: string; title?: string }) => {
+const HeroBanner = ({
+  src,
+  title,
+  title2,
+  title3,
+  btns = false,
+}: {
+  src: string;
+  title?: string;
+  title2?: string;
+  title3?: string;
+  btns?: boolean;
+}) => {
   return (
     <div className="relative">
       <picture className="block h-screen">
@@ -18,14 +32,28 @@ const HeroBanner = ({ src, title }: { src: string; title?: string }) => {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent from-70% to-black to-100%"></div>
 
       <MaxWidthWrapper noPadding className="absolute !p-0 inset-x-0 bottom-24 flex items-center justify-center w-full">
-        <div className="px-4 sm:px-6 w-full">
+        <div className="px-4 flex flex-col gap-5 sm:px-6 w-full">
           <div className="w-full max-w-screen-xl mx-auto">
             <div className="w-full max-w-3xl">
               <div className="text-left text-white">
-                <h1 className="text-3xl md:text-5xl font-bold uppercase">{title || "Book a Test Ride"}</h1>
+                <h1 className="text-3xl md:text-5xl font-bold uppercase">{title || "Book a Test Ride"}</h1>{" "}
+                <p className="text-xl font-thin mt-2">{title2}</p>
               </div>
             </div>
           </div>
+          {btns && (
+            <div className="flex items-center gap-2">
+              <SkewedButton className="before:bg-white !text-black">
+                <Link href={"/book-a-test-ride"}>BOOK A TEST RIDE</Link>
+              </SkewedButton>
+              <SkewedButton className=" !text-black">
+                {" "}
+                <Link href={"/book-a-test-ride"} className=" uppercase">
+                  store-locator
+                </Link>
+              </SkewedButton>
+            </div>
+          )}
         </div>
       </MaxWidthWrapper>
     </div>

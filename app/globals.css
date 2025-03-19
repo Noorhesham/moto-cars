@@ -40,9 +40,14 @@
 .special {
   font-family: "Nebula", sans-serif;
 }
+<<<<<<< HEAD
 .Metropolis{
   font-family: "Metropolis", sans-serif;
 
+=======
+.Metropolis {
+  font-family: "Metropolis", sans-serif;
+>>>>>>> 845e2b7 (meow)
 }
 @layer base {
   :root {
@@ -188,8 +193,11 @@
   }
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 845e2b7 (meow)
 @layer base {
   * {
     @apply border-border;
@@ -198,3 +206,27 @@
     @apply bg-background text-foreground;
   }
 }
+<<<<<<< HEAD
+=======
+.prose {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.prose :where(h2):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  color: var(--tw-prose-headings);
+  font-weight: 700;
+  font-size: 1.5em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  line-height: 1.3333333;
+}
+.prose :where(.prose > :first-child):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  margin-top: 0;
+}
+.prose :where(ul):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  list-style-type: disc;
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  padding-inline-start: 1.625em;
+}
+>>>>>>> 845e2b7 (meow)

@@ -11,6 +11,10 @@ import FormSelect from "../inputs/FormSelect";
 import FormInput from "../inputs/FormInput";
 import { PhotoInput } from "../inputs/PhotoInput";
 import { toast } from "react-toastify";
+<<<<<<< HEAD
+=======
+import { DynamicFormProps } from "@/app/types";
+>>>>>>> 845e2b7 (meow)
 
 export default function DynamicForm({
   fields,

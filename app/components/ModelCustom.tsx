@@ -9,7 +9,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-  
 const ModelCustom = ({
   text,
   onClick,
@@ -32,7 +31,7 @@ const ModelCustom = ({
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>{btn}</DialogTrigger>
-      <DialogContent className="sm:max-w-[80vw] ">
+      <DialogContent className="sm:max-w-[80vw] max-h-[80vh] overflow-y-scroll ">
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
           <DialogDescription>{text}</DialogDescription>

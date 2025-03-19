@@ -27,16 +27,24 @@ const data = {
           url: "/dashboard",
         },
         {
-          title: "About Us",
-          url: "/dashboard/about",
+          title: "Products",
+          url: "/dashboard/products",
         },
         {
-          title: "Create About us",
-          url: "/dashboard/about-create",
+          title: "Create Product",
+          url: "/dashboard/products/create",
         },
         {
-          title: "places",
-          url: "/dashboard/places",
+          title: "blogs",
+          url: "/dashboard/blogs",
+        },
+        {
+          title: "Create blogs",
+          url: "/dashboard/blogs/create",
+        },
+        {
+          title: "Create Users",
+          url: "/dashboard/user",
         },
       ],
     },

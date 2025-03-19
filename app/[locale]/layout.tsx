@@ -44,11 +44,7 @@ export default async function RootLayout({
     <html lang="en">
       <NextIntlClientProvider locale={locale} messages={messages}>
         <body className={` antialiased`}>
-          <div className=" relative">
-            <MainNav />
-            {children}
-            <Footer />
-          </div>
+          <div className=" relative">{children}</div>
         </body>
       </NextIntlClientProvider>
     </html>
