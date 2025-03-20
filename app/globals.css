@@ -216,3 +216,30 @@
   margin-bottom: 1.25em;
   padding-inline-start: 1.625em;
 }
+#iubenda_policy .iub_content {
+  position: relative;
+  padding: 25px 30px;
+  margin: 0 auto;
+  border-radius: 3px 3px 0 0;
+}
+#iubenda_policy.iubenda_fluid_policy .one_line_col,
+#iubenda_policy.iubenda_fluid_policy .half_col {
+  width: 100%;
+}
+#iubenda_policy .legal_pp .one_line_col {
+  float: none;
+  border-top: 0;
+  padding-bottom: 21px;
+}
+#iubenda_policy .one_line_col {
+  zoom: 1;
+  float: left;
+  width: 100%;
+  border-bottom: 1px dotted #dfdfdf;
+}
+#iubenda_policy h3 {
+  font-size: 13px;
+  line-height: 19px;
+  font-weight: bold;
+  padding-top: 24px;
+}

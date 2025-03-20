@@ -1,0 +1,49 @@
+#iubenda_policy details.box_primary h3 {
+  position: relative;
+  border-bottom: 0;
+  padding: 12px 25px 13px 45px;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-position-x: 10px;
+  background-position-y: 10px;
+  background-position: 10px 10px;
+}
+#iubenda_policy .box_10 {
+  padding: 10px;
+  border-radius: 3px;
+  margin-bottom: 15px;
+}
+#iubenda_policy details.box_primary h3 {
+  position: relative;
+  border-bottom: 0;
+  padding: 12px 25px 13px 45px;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-position-x: 10px;
+  background-position-y: 10px;
+  background-position: 10px 10px;
+}
+#iubenda_policy .policyicon_purpose_5 {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYBAMAAAASWSDLAAAAElBMVEUAAAA%2FPz8%2FPz8%2FPz8%2FPz8%2FPz%2BtTDCxAAAABXRSTlMAECBAgLf%2B2%2BsAAABGSURBVBhXY2AAA5ZQBwY4YA0NIJfjCjYHygkNDUTmBGPhgOyFc1iB6pE4wSAOUAGCIxoaiOCYhgYjOKqhQThkyODAAR4OAI98N9LK6tL3AAAAAElFTkSuQmCC);
+}
+#iubenda_policy [class*="policyicon_"] {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYBAMAAAASWSDLAAAAGFBMVEUAAAA%2FPz8%2FPz8%2FPz8%2FPz8%2FPz8%2FPz8%2FPz9%2BjSc3AAAAB3RSTlMAEEBQgMzQxeXuPgAAADJJREFUGFdjYMAJWEPhIAAPh70cDgoGK6cI5B8Yp6S8TACJk4gkA5RAcBKR9BQLoAUOAATNYYOCulUNAAAAAElFTkSuQmCC);
+  background-repeat: no-repeat;
+}
+#iubenda_policy h3 {
+  font-size: 13px;
+  line-height: 19px;
+  font-weight: bold;
+  padding-top: 24px;
+}
+#iubenda_policy h4 {
+  font-size: 13px;
+  font-weight: bold;
+  padding-top: 19px;
+  margin-bottom: 0;
+}
+#iubenda_policy p {
+  line-height: 19px;
+  margin: 0;
+  padding-top: 11px;
+}
