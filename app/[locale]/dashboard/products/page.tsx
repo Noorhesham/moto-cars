@@ -23,7 +23,8 @@ const Page = async ({ searchParams }: { searchParams: { page?: string } }) => {
   const totalPages = Math.ceil(totalCount / limit);
   console.log(data);
   return (
-    <MaxWidthWrapper className="flex px-4 flex-col mt-5">
+    <MaxWidthWrapper className="flex w-full px-4 gap-3 flex-col mt-5">
+      <h1 className="text-4xl font-semibold"> Products</h1>
       <div className="flex items-center gap-2">
         <Button className="self-end">
           <Link href="/dashboard/products/create" as="/en/dashboard/products/create">

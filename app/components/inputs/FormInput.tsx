@@ -128,7 +128,7 @@ const FormInput = ({
                     <Link
                       target="_blank"
                       href={form.getValues(name)?.file || "#"}
-                      className="flex gap-2 justify-between w-full bg-white rounded-xl hover:bg-sky-100 duration-150  
+                      className="flex gap-2 justify-between w-full  rounded-xl hover:bg-sky-100 duration-150  
                      px-4 py-2 items-center"
                     >
                       {form.getValues(name) && <p className="text-gray-800 text-sm">{form.getValues(name).title}</p>}
@@ -148,7 +148,7 @@ const FormInput = ({
                         : type || "text"
                     }
                     accept={type === "file" ? "image/*, application/pdf" : undefined}
-                    className={`${!phone && "bg-white"} mt-auto shadow-sm w-full ${
+                    className={`${!phone && ""} mt-auto shadow-sm w-full ${
                       password && form.getValues(name) && "pl-8"
                     } `}
                     placeholder={placeholder}

@@ -76,7 +76,9 @@ export function ProductForm({ initialData }: ProductFormProps) {
   console.log(form.formState.errors);
   const onSubmit = async (data: ProductFormValues) => {
     console.log(data);
-    const res = initialData ? await updateEntity("Product", initialData._id, data) : await createEntity("Product", data);
+    const res = initialData
+      ? await updateEntity("Product", initialData._id, data)
+      : await createEntity("Product", data);
     console.log(res);
     if (res.success)
       toast({
@@ -93,8 +95,10 @@ export function ProductForm({ initialData }: ProductFormProps) {
     <FormProvider {...form}>
       <form onSubmit={handleSubmit(onSubmit)} className=" mx-auto ">
         <MaxWidthWrapper className="">
+          {" "}
+          <h1 className="text-4xl font-bold mb-4"> {initialData ? "Edit" : "Create"} Product</h1>
           {/* Starter Section */} <FormInput name="slug" label="slug" placeholder="Enter slug" />
-          <div className="bg-white p-6 rounded-lg shadow-sm border">
+          <div className=" p-6 rounded-lg shadow-sm border">
             <h2 className="text-xl font-semibold mb-4">Basic Information</h2>
             <div className="space-y-4">
               <ArabicEnglishForm name="starter.name" label="Name" />
@@ -110,11 +114,11 @@ export function ProductForm({ initialData }: ProductFormProps) {
             </div>
           </div>
           {/* Title Features */}
-          <div className="bg-white p-6 rounded-lg shadow-sm border">
+          <div className=" p-6 rounded-lg shadow-sm border">
             <ArabicEnglishForm name="titleFeatures" label="Features Title" />
           </div>
           {/* Features Section */}
-          <div className="bg-white p-6 rounded-lg shadow-sm border">
+          <div className=" p-6 rounded-lg shadow-sm border">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-xl font-semibold">Features</h2>
               <button
@@ -155,7 +159,7 @@ export function ProductForm({ initialData }: ProductFormProps) {
           </div>
           <ArabicEnglishForm name={`colorTitle`} label="Color Title" />
           {/* Colors Section */}
-          <div className="bg-white p-6 rounded-lg shadow-sm border">
+          <div className=" p-6 rounded-lg shadow-sm border">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-xl font-semibold">Colors</h2>
               <button
@@ -201,7 +205,7 @@ export function ProductForm({ initialData }: ProductFormProps) {
             </div>
           </div>
           {/* Stats Section */}
-          <div className="bg-white p-6 rounded-lg shadow-sm border">
+          <div className=" p-6 rounded-lg shadow-sm border">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-xl font-semibold">Stats</h2>
               <button
@@ -232,7 +236,7 @@ export function ProductForm({ initialData }: ProductFormProps) {
             </div>
           </div>
           {/* Images Section */}
-          <div className="bg-white p-6 rounded-lg shadow-sm border">
+          <div className=" p-6 rounded-lg shadow-sm border">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-xl font-semibold">Gallery Images</h2>
             </div>
@@ -242,7 +246,7 @@ export function ProductForm({ initialData }: ProductFormProps) {
             </div>
           </div>
           {/* Specs Section */}
-          <div className="bg-white p-6 rounded-lg shadow-sm border">
+          <div className=" p-6 rounded-lg shadow-sm border">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-xl font-semibold">Specifications</h2>
               <button
@@ -272,11 +276,11 @@ export function ProductForm({ initialData }: ProductFormProps) {
             </div>
           </div>
           {/* Content Section */}
-          <div className="bg-white p-6 rounded-lg shadow-sm border">
+          <div className=" p-6 rounded-lg shadow-sm border">
             <h2 className="text-xl font-semibold mb-4">Content</h2>
             <ArabicEnglishForm area name="content" label="HTML Content" />
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-sm border">
+          <div className=" p-6 rounded-lg shadow-sm border">
             <h2 className="text-xl font-semibold mb-4">Video</h2>
             <FormInput name="videourl" label="Video URL" placeholder="Enter video URL" optional />
             <FormInput
@@ -289,7 +293,7 @@ export function ProductForm({ initialData }: ProductFormProps) {
             />
           </div>
           {/* Optional Leaflet Section */}
-          <div className="bg-white p-6 rounded-lg shadow-sm border">
+          <div className=" p-6 rounded-lg shadow-sm border">
             <h2 className="text-xl font-semibold mb-4">Product Leaflet</h2>
             <FormInput name="leaflet" label="Leaflet URL" placeholder="Enter leaflet URL" optional />
           </div>
