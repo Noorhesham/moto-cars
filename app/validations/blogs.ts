@@ -13,7 +13,7 @@ const SectionSchema = z.object({
       videourl: z.string().min(1, "Video URL is required"),
       videoThumbnail: z.string().min(1, "Video thumbnail is required"),
     }),
-    z.array(z.string()).min(1, "At least one image is required for slider sections."),
+    z.array(z.string()).min(1, "At least one section is required"),
   ]),
 });
 
@@ -24,7 +24,8 @@ export const blogSchema = z.object({
     ar: z.string().min(1, "Arabic title is required"),
   }),
   slug: z.string().min(1, "Slug is required"),
-  sections: z.array(SectionSchema).min(1, "At least one section is required"),
+  backgroundImage: z.string().min(1, "Background image is required"),
+  sections: z.array(SectionSchema),
 });
 
 export type BlogFormValues = z.infer<typeof blogSchema>;

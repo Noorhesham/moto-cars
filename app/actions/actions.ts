@@ -188,3 +188,117 @@ export const getEntity = async (
     return { error: `Error fetching ${modelName}`, details: error };
   }
 };
+export async function getStats() {
+  try {
+    await connect();
+
+    // Get counts from all models
+    const [productsCount, blogsCount, usersCount] = await Promise.all([
+      Product.countDocuments(),
+      Blog.countDocuments(),
+      User.countDocuments(),
+    ]);
+
+    // Get total features count across all products
+    const featuresAggregation = await Product.aggregate([
+      {
+        $project: {
+          featuresCount: { $size: "$features" },
+        },
+      },
+      {
+        $group: {
+          _id: null,
+          totalFeatures: { $sum: "$featuresCount" },
+        },
+      },
+    ]);
+
+    const featuresCount = featuresAggregation.length > 0 ? featuresAggregation[0].totalFeatures : 0;
+
+    return {
+      productsCount,
+      blogsCount,
+      usersCount,
+      featuresCount,
+    };
+  } catch (error) {
+    console.error("Error fetching stats:", error);
+    return {
+      productsCount: 0,
+      blogsCount: 0,
+      usersCount: 0,
+      featuresCount: 0,
+    };
+  }
+}
+
+export async function getRecentActivity() {
+  try {
+    await connect();
+
+    // Get recent products
+    const recentProducts = await Product.find().sort({ createdAt: -1 }).limit(3).select("starter.name slug createdAt");
+
+    // Get recent blogs
+    const recentBlogs = await Blog.find().sort({ createdAt: -1 }).limit(3).select("title slug createdAt");
+
+    // Get recent users
+    const recentUsers = await User.find().sort({ createdAt: -1 }).limit(3).select("name email createdAt");
+
+    // Combine and sort by createdAt
+    const allActivity = [
+      ...recentProducts.map((product) => ({
+        type: "product",
+        title: product.starter.name,
+        slug: product.slug,
+        createdAt: product.createdAt,
+      })),
+      ...recentBlogs.map((blog) => ({
+        type: "blog",
+        title: blog.title,
+        slug: blog.slug,
+        createdAt: blog.createdAt,
+      })),
+      ...recentUsers.map((user) => ({
+        type: "user",
+        title: user.name,
+        email: user.email,
+        createdAt: user.createdAt,
+      })),
+    ]
+      .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+      .slice(0, 5);
+
+    return allActivity;
+  } catch (error) {
+    console.error("Error fetching recent activity:", error);
+    return [];
+  }
+}
+
+export async function getTopProducts() {
+  try {
+    await connect();
+
+    // For demonstration purposes, we'll just get the products with the most features
+    const topProducts = await Product.aggregate([
+      {
+        $project: {
+          name: "$starter.name",
+          slug: "$slug",
+          featuresCount: { $size: "$features" },
+          colorsCount: { $size: "$colors" },
+          totalCount: { $add: [{ $size: "$features" }, { $size: "$colors" }] },
+        },
+      },
+      { $sort: { totalCount: -1 } },
+      { $limit: 3 },
+    ]);
+
+    return topProducts;
+  } catch (error) {
+    console.error("Error fetching top products:", error);
+    return [];
+  }
+}

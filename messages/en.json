@@ -1,305 +1,43 @@
 {
-  "nav": {
-    "Home": "Home",
-    "Who Are We": "Who Are We",
-    "Services": "Services",
-    "Food Code": "Food Code",
-    "Portfolio": "Portfolio",
-    "Careers": "Careers",
-    "Our Clients": "Our Clients",
-    "About": "About",
-    "Blog": "Blog",
-    "contactUs": "Contact Us",
-    "Career": "Career",
-    "Contact Us": "Contact Us",
-    "Solutions": "Solutions",
-    "Projects": "Projects",
-    "Who We Are": "Who We Are",
-    "submenu": {
-      "Services": {
-        "Digital Marketing": "Digital Marketing",
-        "Web Development": "Web Development",
-        "Mobile Apps": "Mobile Apps",
-        "UI/UX Design": "UI/UX Design"
-      }
-    }
+  "login": {
+    "title": "VMoto",
+    "emailLabel": "Email or username",
+    "passwordLabel": "Password",
+    "forgotPassword": "Forgot your password?",
+    "rememberMe": "Remember me?",
+    "signIn": "Sign In"
   },
-
-  "hero": {
-    "title": {
-      "part1": "Take Your Brand To",
-      "part2": "The",
-      "highlight": "Next Level"
-    },
-    "description": "ABG is an acclaimed digital marketing, media production agency and powerhouse in software development with a reputation for both effective marketing strategies, solutions, the use of digitalization, and software development with headquarter in Cairo-Egypt."
-  },
-  "services": {
-    "software": {
-      "mobile": "Mobile Development",
-      "website": "Website Development",
-      "uiux": "UI/UX",
-      "aibi": "AI/BI",
-      "testing": "Testing",
-      "dataAnalysis": "Data Analysis"
-    },
-    "marketing": {
-      "repin": "RepIn (S.F.A)",
-      "shipping": "Shipping",
-      "affiliate": "Affiliate",
-      "crm": "CRM"
-    }
-  },
-  "sections": {
-    "software": {
-      "title": "Software Development",
-      "subtitle": "SERVICES",
-      "description": "Bring your business to customers within arm's reach. We create mobile apps with the latest technologies."
-    },
-    "softwareProjects": {
-      "title": "SAAS Products"
-    },
-    "saas": {
-      "title": "SAAS Products",
-      "subtitle": "MARKETING",
-      "description": "Bring your business to customers within arm's reach. We create mobile apps with the latest technologies."
-    },
-    "marketingProjects": {
-      "title": "SAAS Products"
-    }
-  },
-  "projects": {
-    "title": "Our Projects",
-    "button": "Explore more",
-    "items": {
-      "basketball": {
-        "title": "Egyptian basketball",
-        "description": "Follow the latest Egyptian basketball news through the \"Egyptian Basketball Federation\" application With comprehensive and exclusive coverage 24 hours a day Federation app."
-      },
-      "delivertto": {
-        "title": "DELIVERTTO APP",
-        "description": "Delivertto is the first app of its kind in Delta and soon across the Republic The best offers from the supermarket in your area Save yourself time and effort."
-      },
-      "elshawa": {
-        "title": "El-shawa website",
-        "description": "El-shawa website is an online marketplace where you can find all home needs and your needs in one place to order whatever you like from a wide range of kitchen sets and clothes and other stuff."
-      },
-      "ugmedical": {
-        "title": "UG medical",
-        "description": "Online marketplace for specialized biochemical materials for laboratory and laboratory equipment. This application is the number 1 platform in Egypt for purchasing medical elevators."
-      },
-      "zagel": {
-        "title": "Zagel App",
-        "description": "Bring your business to customers within arm's reach. We create mobile apps with the latest technologies."
-      }
-    }
-  },
-  "divider": {
-    "software": {
-      "title": "Explore our",
-      "highlight": "Software Solutions",
-      "description": "We build cutting-edge software solutions that help businesses transform their digital presence and streamline operations."
-    },
-    "saas": {
-      "title": "Discover our",
-      "highlight": "SAAS Products",
-      "description": "Powerful software-as-a-service solutions designed to enhance your business efficiency and growth."
-    }
-  },
-  "foodCode": {
-    "subtitle": "SERVICES",
-    "title": "Food Code Community",
-    "description": "Reach to 320K of our Facebook page follows and engage with a community of 6.5M member in our Facebook group"
-  },
-  "buttons": {
-    "viewMarketingPortfolio": "View Marketing Portfolio"
-  },
-  "ServicesPage": {
-    "pageTitle": "Software House",
-    "services": "SERVICES",
-    "cta": {
-      "title": "Not Sure Where To Start?",
-      "subtitle": "Ask Experts"
-    },
-    "sections": [
-      {
-        "title": "Website Development",
-        "description": "A good website is one that is not only pleasing to look at, but also easy and intuitive to use. At ABG we make sure website designing services will prove to be quite useful towards the growth and improvement of your business or organization...",
-        "imageSrc": "/websit.png"
-      },
-      {
-        "title": "Mobile Development",
-        "description": "Google's Android and Apple's iOS operating systems are the two primarily in mobile tech...",
-        "imageSrc": "/mobil-develemnt.png"
-      },
-      {
-        "title": "UX/UI",
-        "description": "We consider UI/UX as a very crucial aspect of your mobile application...",
-        "imageSrc": "/Image-ui-ux.png"
-      },
-      {
-        "title": "AI/BI",
-        "description": "Not only is AI capable of doing all those fantastic science-fiction things...",
-        "imageSrc": "/shutterstock.png"
-      },
-      {
-        "title": "Testing",
-        "description": "Our comprehensive testing ensures...",
-        "imageSrc": "/developers-looking.png"
-      },
-      {
-        "title": "Data Analysis",
-        "description": "Our team of data analysts are here to integrate...",
-        "imageSrc": "/data-Analysis.png"
-      }
-    ]
-  },
-  "consultation": {
-    "title": "GET FREE CONSULTATION",
-    "placeholder": "Type Mobile number",
-    "button": "Send Request",
-    "description": "Schedule Free call for 30 minutes with our business experts"
-  },
-  "business": {
-    "subtitle": "SERVICES",
-    "title": "Business Consultant",
-    "description": "For us, at A.B.G we believe in our customers and clients' succession and we make sure we reach this succession hand in hand. So one of our mission is to keep your business safe and to avoid any risks along the way by studying all your strengths and weakness points and providing you with studied strategies and professional advice for your moves in the market.",
-    "button": "Explore more"
-  },
-  "clients": {
-    "title": "OUR CLIENTS",
-    "subtitle": {
-      "part1": "Brands",
-      "part2": "we are proud to work with"
-    }
-  },
-  "footer": {
-    "company": {
-      "name": "Artificial Business Gate",
-      "description": "Think of us as a new prospective to reach new consumers and turning them into customers.",
-      "openingHours": {
-        "title": "Opening Hours",
-        "hours": "9 am - 5pm"
-      }
-    },
-    "sections": {
-      "mainLinks": {
-        "title": "Main Links",
-        "items": {
-          "Home": "Home",
-          "Who We Are": "Who We Are",
-          "Services": "Services",
-          "Portfolio": "Portfolio"
-        }
-      },
-      "ourServices": {
-        "title": "Our Services",
-        "items": {
-          "Career": "Career",
-          "Contact Us": "Contact Us",
-          "Solutions": "Solutions",
-          "Projects": "Projects"
-        }
-      }
-    },
-    "newsletter": {
-      "title": "Subscribe for newsletter",
-      "placeholder": "Enter your email",
-      "button": "Subscribe",
-      "subscribing": "Subscribing..."
-    },
-    "copyright": "© {year} Artificial Business Gate. All rights reserved.",
-    "links": {
-      "privacy": "Privacy Policy",
-      "terms": "Terms of Service"
-    },
-    "toast": {
-      "success": "Successfully subscribed to newsletter!",
-      "error": "Failed to subscribe. Please try again."
-    }
-  },
-  "counter": {
-    "stats": {
-      "pageFollowers": {
-        "label": "Page Followers",
-        "suffix": "k"
-      },
-      "groupMembers": {
-        "label": "Group members",
-        "suffix": "M"
-      }
-    }
-  },
-  "about": {
-    "title": "ABOUT US",
-    "subtitle": "We have over 10 years experience!",
-    "description": "ABG is an inter-regional software house and digital marketing consulting agency based in Cairo, Egypt. In cooperated in 2015, ABG is well established credible, and integrated company",
-    "stats": {
-      "projects": {
-        "count": "560+",
-        "label": "Successfully Project"
-      },
-      "growth": {
-        "count": "560+",
-        "label": "Successfully Project"
-      },
-      "awards": {
-        "count": "560+",
-        "label": "Successfully Project"
-      },
-      "clients": {
-        "count": "560+",
-        "label": "Successfully Project"
-      }
-    }
-  },
-  "mission": {
-    "sections": {
-      "mission": {
-        "title": "Our Mission",
-        "heading": "to propose digital marketing strategies and digitalization",
-        "content": "and the use of digital services to affiliate our clients' goals and to avoid or minimize the risks that might affect our clients' operations"
-      },
-      "vision": {
-        "title": "Our Vision",
-        "heading": "Our vision",
-        "content": "The Artificial Business Gate's vision is to use the power of digitalization in empowering all businesses of all sizes on their journey of digital transformation. To reach the bright future by our vision and your ambition"
-      },
-      "value": {
-        "title": "Our Added Value",
-        "heading": "Added Value",
-        "content": "in the digital marketing solutions and software industry is based on our approach"
-      }
-    }
-  },
-  "careers": {
-    "title": "CAREERS",
-    "subtitle": "Work And Grow In Team With A Global Mindset.",
-    "currentOpenings": {
-      "title": "Current Opening",
-      "description": "Since 2006, abc has delivered excellence in digital services and has become one of Egyptian leading software houses. Abc develops and designs web, mobile and eCommerce projects and helps both small startups and world-leading digital companies build products, grow their online business, and scale their workforce globally."
-    },
-    "categories": {
-      "all": "All",
-      "digitalMarketing": "Digital marketing",
-      "development": "Development",
-      "qa": "QA",
-      "business": "Business"
-    },
-    "search": {
-      "placeholder": "Search for job .."
-    },
-    "noJobs": "not available for now!"
-  },
-  "foodCodePage": {
-    "header": {
-      "subtitle": "SERVICES",
-      "title": "Food Code Community",
-      "description": "Reach to 320K of our Facebook page follows and engage with a community of 6.5M member in our Facebook group"
-    },
-    "images": {
-      "header": "Header Image",
-      "background": "Background Header",
-      "foodCode": "Food Code"
-    }
+  "dashboard": {
+    "pageTitle": "Dashboard | VMoto Admin",
+    "pageDescription": "VMoto admin dashboard overview",
+    "title": "Dashboard",
+    "overview": "Here's an overview of your store's performance",
+    "products": "Products",
+    "totalProducts": "Total products in your store",
+    "blogs": "Blogs",
+    "totalBlogs": "Total blog posts published",
+    "users": "Users",
+    "totalUsers": "Total registered users",
+    "features": "Features",
+    "totalFeatures": "Total product features",
+    "increase": "increase from last month",
+    "decrease": "decrease from last month",
+    "recentActivity": "Recent Activity",
+    "recentActivityDescription": "Your store's latest activities",
+    "topProducts": "Top Products",
+    "topProductsDescription": "Products with most features and colors",
+    "colorDistribution": "Color Distribution",
+    "contentDistribution": "Content Distribution",
+    "contentDistributionDescription": "Text vs. media content in your blogs",
+    "activityTimeline": "Activity Timeline",
+    "newProductAdded": "New product added",
+    "newBlogPublished": "New blog published",
+    "newUserRegistered": "New user registered",
+    "productAdded": "{name} was added",
+    "blogPublished": "Blog \"{title}\" was published",
+    "userRegistered": "{name} registered",
+    "view": "View",
+    "colors": "Colors",
+    "features": "Features"
   }
 }

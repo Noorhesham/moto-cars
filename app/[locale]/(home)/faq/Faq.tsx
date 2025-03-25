@@ -45,7 +45,7 @@ export function FAQ() {
       <MaxWidthWrapper noPadding>
         <div className="space-y-8 w-full">
           <div className="space-y-2 w-full">
-            <p className="text-sm uppercase tracking-wider text-gray-600 border-b border-black w-fit">
+            <p className="text-sm special uppercase tracking-wider text-gray-600 border-b border-black w-fit">
               FREQUENTLY ASKED QUESTIONS
             </p>
             <h1 className="text-5xl font-bold tracking-tight">UNLOCKING THE WORLD OF ELECTRIC SCOOTERS</h1>

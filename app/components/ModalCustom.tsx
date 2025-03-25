@@ -39,7 +39,20 @@ const products = {
       image: "/stash.png",
     },
   ],
-  // Add other category products here
+  "E-SCOOTER": [
+    {
+      name: "OFF-R",
+      image: "/stash.png",
+    },
+    {
+      name: "ON-R",
+      image: "/stash.png",
+    },
+    {
+      name: "STASH",
+      image: "/stash.png",
+    },
+  ],
 };
 
 export function ModelRange() {
@@ -50,7 +63,9 @@ export function ModelRange() {
   return (
     <section className="relative py-16">
       <MaxWidthWrapper noPadding className="flex flex-col">
-        <h2 className="specail mb-5 w-fit border-b special  border-input text-base font-light tracking-[0.2em]">MODEL RANGE</h2>
+        <h2 className="specail mb-5 w-fit border-b special  border-input text-base font-light tracking-[0.2em]">
+          MODEL RANGE
+        </h2>
         <div className="flex items-center justify-between">
           {/* Mobile Select */}
           <div className="md:hidden w-[200px]">
@@ -114,10 +129,10 @@ export function ModelRange() {
             onBeforeInit={(swiper) => {
               swiperRef.current = swiper;
             }}
+            key={activeCategory} // Add this inside the <Swiper> component
             slidesPerView={1}
             spaceBetween={32}
-            loop={true}
-            centeredSlides={true}
+            loop={products[activeCategory as keyof typeof products]?.length > 3} // Disable loop for small arrays
             speed={800}
             autoplay={{
               delay: 3000,
@@ -128,7 +143,7 @@ export function ModelRange() {
                 slidesPerView: 2,
               },
               1024: {
-                slidesPerView: 3.8,
+                slidesPerView: products[activeCategory as keyof typeof products]?.length > 3 ? 3.8 : 3,
               },
             }}
             className="!overflow-visible"

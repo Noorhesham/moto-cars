@@ -25,7 +25,7 @@ export async function middleware(req: NextRequest) {
     return NextResponse.redirect(url);
   }
   if (isSecure && !isLoggedIn) {
-    url.pathname = "/login";
+    url.pathname = "/admin/login";
     return NextResponse.redirect(url);
   }
   if (!req.url.includes("/api")) {

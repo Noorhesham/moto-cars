@@ -9,12 +9,14 @@ const HeroBanner = ({
   title2,
   title3,
   btns = false,
+  children,
 }: {
   src: string;
   title?: string;
   title2?: string;
   title3?: string;
   btns?: boolean;
+  children?: React.ReactNode;
 }) => {
   return (
     <div className="relative">
@@ -37,7 +39,7 @@ const HeroBanner = ({
             <div className="w-full max-w-3xl">
               <div className="text-left text-white">
                 <h1 className="text-3xl md:text-5xl font-bold uppercase">{title || "Book a Test Ride"}</h1>{" "}
-                <p className="text-xl font-thin mt-2">{title2}</p>
+                <p className="text-xl font-thin mt-2">{title2}</p> {children && children}
               </div>
             </div>
           </div>
