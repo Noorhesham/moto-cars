@@ -20,37 +20,37 @@ const products = {
   "E-MOTO": [
     {
       name: "OFF-R",
-      image: "/stash.png",
+      image: "/sssssssss.png",
     },
     {
       name: "ON-R",
-      image: "/stash.png",
+      image: "/sssssssss.png",
     },
     {
       name: "STASH",
-      image: "/stash.png",
+      image: "/sssssssss.png",
     },
     {
       name: "TC MAX",
-      image: "/stash.png",
+      image: "/sssssssss.png",
     },
     {
       name: "TC MAX",
-      image: "/stash.png",
+      image: "/sssssssss.png",
     },
   ],
   "E-SCOOTER": [
     {
       name: "OFF-R",
-      image: "/stash.png",
+      image: "/sssssssss.png",
     },
     {
       name: "ON-R",
-      image: "/stash.png",
+      image: "/sssssssss.png",
     },
     {
       name: "STASH",
-      image: "/stash.png",
+      image: "/sssssssss.png",
     },
   ],
 };
@@ -154,7 +154,7 @@ export function ModelRange() {
                   <div className=" w-full relative aspect-[3/2] lg:h-56 lg:aspect-square overflow-hidden">
                     <Image
                       fill
-                      src={"/stash.png"}
+                      src={product.image}
                       alt={product.name}
                       className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
                     />

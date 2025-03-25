@@ -61,16 +61,7 @@ export const updateEntity = async (
     return { error: `Error updating ${modelName}`, details: error.message };
   }
 };
-export const deleteImage = async (publicId: string) => {
-  try {
-    const res = await cloudinary.uploader.destroy(publicId);
-    console.log(`Deleted image with public ID: ${publicId}`, res);
-    return res;
-  } catch (error) {
-    console.error(`Error deleting image with public ID: ${publicId}`, error);
-    throw new Error(`Failed to delete image: ${error.message}`);
-  }
-};
+
 
 export const deleteEntity = async (modelName: "Product" | "User" | "Blog", id: string) => {
   "use server";
