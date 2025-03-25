@@ -122,7 +122,7 @@ export function ModelRange() {
         </div>
       </MaxWidthWrapper>
 
-      <div className="relative ml-[10.5rem] flex flex-col overflow-hidden items-end">
+      <div className="relative lg:ml-[10.5rem] flex flex-col overflow-hidden items-end">
         <div className="relative max-w-full   lg:mr-[-9rem] overflow-hidden">
           <Swiper
             modules={[Navigation, Autoplay]}
