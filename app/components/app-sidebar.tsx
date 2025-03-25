@@ -1,6 +1,16 @@
 "use client";
 import type * as React from "react";
-import { Home, Package, PlusCircle, FileText, FilePlus, Users, LayoutDashboard, LogOut } from "lucide-react";
+import {
+  Home,
+  Package,
+  PlusCircle,
+  FileText,
+  FilePlus,
+  Users,
+  LayoutDashboard,
+  LogOut,
+  BriefcaseBusinessIcon,
+} from "lucide-react";
 
 import {
   Sidebar,
@@ -56,6 +66,11 @@ const data = {
           title: "Users",
           url: "/dashboard/user",
           icon: Users,
+        },
+        {
+          title: "Business",
+          url: "/dashboard/business",
+          icon: BriefcaseBusinessIcon,
         },
       ],
     },

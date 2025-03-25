@@ -7,19 +7,21 @@ import connect from "../utils/clientPromise";
 import Product from "../models/Product";
 import Blog from "../models/Blog";
 import User from "../models/User";
+import Business from "../models/Business";
 interface ModelProps {
   modelName: "Product" | "User" | "Blog";
 }
-const getModel = (modelName: "Product" | "User" | "Blog") => {
+const getModel = (modelName: "Product" | "User" | "Blog" | "BusinessCase") => {
   const models: Record<any, any> = {
     Product: Product,
     Blog: Blog,
     User: User,
+    BusinessCase: Business,
   };
   return models[modelName];
 };
 
-export const createEntity = async (modelName: "Product" | "User" | "Blog", data: any) => {
+export const createEntity = async (modelName: "Product" | "User" | "Blog" | "BusinessCase", data: any) => {
   try {
     console.log(data, modelName);
     await connect();
@@ -41,7 +43,7 @@ export const createEntity = async (modelName: "Product" | "User" | "Blog", data:
 };
 
 export const updateEntity = async (
-  modelName: "Product" | "User" | "Blog",
+  modelName: "Product" | "User" | "Blog" | "BusinessCase",
   id: string,
   data: any,
   customRevalidatePaths?: string[]
@@ -61,7 +63,6 @@ export const updateEntity = async (
     return { error: `Error updating ${modelName}`, details: error.message };
   }
 };
-
 
 export const deleteEntity = async (modelName: "Product" | "User" | "Blog", id: string) => {
   "use server";

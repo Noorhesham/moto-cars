@@ -10,6 +10,7 @@ import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
 import { createEntity, updateEntity } from "@/app/actions/actions";
 import { toast } from "react-toastify";
 import { useToast } from "@/hooks/use-toast";
+import FormSelect from "@/app/components/inputs/FormSelect";
 
 interface ProductFormProps {
   initialData?: ProductFormValues;
@@ -32,6 +33,9 @@ export function ProductForm({ initialData }: ProductFormProps) {
       images: [],
       specs: [],
       content: { en: "", ar: "" },
+      category: "",
+      leaflet: "",
+      slug: "",
     },
   });
 
@@ -97,7 +101,19 @@ export function ProductForm({ initialData }: ProductFormProps) {
         <MaxWidthWrapper className="">
           {" "}
           <h1 className="text-4xl font-bold mb-4"> {initialData ? "Edit" : "Create"} Product</h1>
-          {/* Starter Section */} <FormInput name="slug" label="slug" placeholder="Enter slug" />
+          {/* Starter Section */}
+          <FormInput name="slug" label="slug" placeholder="Enter slug" />
+          <FormSelect
+            name="category"
+            label="Category"
+            placeholder="Choose Category"
+            options={[
+              { value: "E-MOTO", label: "E-MOTO" },
+              { value: "E-SCOOTER", label: "E-SCOOTER" },
+              { value: "E-FLEET", label: "E-FLEET" },
+              { value: "Charging Systems", label: "Charging Systems" },
+            ]}
+          />
           <div className=" p-6 rounded-lg shadow-sm border">
             <h2 className="text-xl font-semibold mb-4">Basic Information</h2>
             <div className="space-y-4">

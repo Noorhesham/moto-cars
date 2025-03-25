@@ -1,5 +1,5 @@
 "use client";
-import { ColumnDef } from "@tanstack/react-table";
+import type { ColumnDef } from "@tanstack/react-table";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -9,13 +9,13 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { MoreHorizontal } from "lucide-react";
 import Link from "next/link";
-import { IBlog } from "@/app/types";
+import type { IBusinessCase } from "@/app/types";
 import ModelCustom from "@/app/components/ModelCustom";
 import DeleteSingle from "@/app/components/DeleteSingle";
-import { BlogForm } from "./create/BlogForm";
+import { BusinessCaseForm } from "./create/BusinessForm";
 import Image from "next/image";
 
-export const blogColumns: ColumnDef<IBlog>[] = [
+export const businessCaseColumns: ColumnDef<IBusinessCase>[] = [
   {
     accessorKey: "starter.backgroundImage",
     header: "الصورة الرئيسية",
@@ -56,7 +56,7 @@ export const blogColumns: ColumnDef<IBlog>[] = [
   {
     id: "actions",
     cell: ({ row }) => {
-      const blog = row.original;
+      const businessCase = row.original;
 
       return (
         <DropdownMenu>
@@ -68,14 +68,14 @@ export const blogColumns: ColumnDef<IBlog>[] = [
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuItem asChild>
-              <Link href={`/blog/${blog.slug}`}>View Blog</Link>
+              <Link href={`/business-case/${businessCase.slug}`}>View Business Case</Link>
             </DropdownMenuItem>
             <ModelCustom
               btn={<Button className="w-full">Edit</Button>}
-              title="Edit Blog"
-              content={<BlogForm initialData={blog} />}
+              title="Edit Business Case"
+              content={<BusinessCaseForm initialData={businessCase} />}
             />
-            <DeleteSingle data={blog} entity="Blog" />
+            <DeleteSingle data={businessCase} entity="BusinessCase" />
           </DropdownMenuContent>
         </DropdownMenu>
       );
