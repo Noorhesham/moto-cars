@@ -11,8 +11,10 @@ import { BlogFormValues, blogSchema } from "@/app/validations/blogs";
 import { Form } from "@/components/ui/form";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import { useTranslations } from "next-intl";
 
 export function BlogForm({ initialData }: { initialData?: BlogFormValues }) {
+  const t = useTranslations("dashboard.blogs.form");
   const form = useForm<BlogFormValues>({
     resolver: zodResolver(blogSchema),
     defaultValues: initialData || {
@@ -30,19 +32,17 @@ export function BlogForm({ initialData }: { initialData?: BlogFormValues }) {
     control,
     name: "sections",
   });
-  console.log(form.formState.errors);
+
   const onSubmit = async (data: BlogFormValues) => {
-    console.log(data);
     const res = initialData ? await updateEntity("Blog", initialData._id, data) : await createEntity("Blog", data);
-    console.log(res);
     if (res.success)
       toast({
-        title: "Blog created successfully",
+        title: t("success"),
         description: "",
       });
     else
       toast({
-        title: "Error creating blog",
+        title: t("error"),
         description: "",
       });
   };
@@ -50,9 +50,9 @@ export function BlogForm({ initialData }: { initialData?: BlogFormValues }) {
   return (
     <Form {...form}>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
-        <ArabicEnglishForm name="title" label="Title" />
-        <FormInput name="slug" label="Slug" placeholder="Enter slug" />
-        <FormInput name="backgroundImage" label="Background Image" photo single />
+        <ArabicEnglishForm name="title" label={t("title")} />
+        <FormInput name="slug" label={t("slug")} placeholder={t("slug")} />
+        <FormInput name="backgroundImage" label={t("backgroundImage")} photo single />
 
         <div className="space-y-4">
           {fields.map((field, index) => {
@@ -61,13 +61,14 @@ export function BlogForm({ initialData }: { initialData?: BlogFormValues }) {
             return (
               <div key={field.id} className="p-4 border rounded-md">
                 <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-lg font-medium">Section {index + 1}</h3>
+                  <h3 className="text-lg font-medium">
+                    {t("section")} {index + 1}
+                  </h3>
                   <button type="button" onClick={() => remove(index)} className="text-red-600 hover:text-red-800">
                     <Trash2 className="h-5 w-5" />
                   </button>
                 </div>
                 <div className="space-y-4">
-                  {/* Shadcn Select Component */}
                   <Select
                     value={contentType}
                     onValueChange={(value: "text" | "photo" | "video" | "slider") =>
@@ -75,19 +76,19 @@ export function BlogForm({ initialData }: { initialData?: BlogFormValues }) {
                     }
                   >
                     <SelectTrigger className="w-[180px]">
-                      <SelectValue placeholder="Select content type" />
+                      <SelectValue placeholder={t("selectContentType")} />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="text">Text</SelectItem>
-                      <SelectItem value="photo">Photo</SelectItem>
-                      <SelectItem value="video">Video</SelectItem>
-                      <SelectItem value="slider">Slider</SelectItem>
+                      <SelectItem value="text">{t("text")}</SelectItem>
+                      <SelectItem value="photo">{t("photo")}</SelectItem>
+                      <SelectItem value="video">{t("video")}</SelectItem>
+                      <SelectItem value="slider">{t("slider")}</SelectItem>
                     </SelectContent>
                   </Select>
 
                   {contentType === "text" && (
                     <div className="flex items-center flex-col gap-4">
-                      <ArabicEnglishForm area name={`sections.${index}.content`} label="Content" />
+                      <ArabicEnglishForm area name={`sections.${index}.content`} label={t("content")} />
                     </div>
                   )}
 
@@ -96,8 +97,8 @@ export function BlogForm({ initialData }: { initialData?: BlogFormValues }) {
                       photo
                       single
                       name={`sections.${index}.content`}
-                      label="Photo URL"
-                      placeholder="Enter photo URL"
+                      label={t("photoUrl")}
+                      placeholder={t("photoUrl")}
                     />
                   )}
 
@@ -105,19 +106,19 @@ export function BlogForm({ initialData }: { initialData?: BlogFormValues }) {
                     <div className="flex items-center gap-4">
                       <FormInput
                         name={`sections.${index}.content.videourl`}
-                        label="Video URL"
-                        placeholder="Enter video URL"
+                        label={t("videoUrl")}
+                        placeholder={t("videoUrl")}
                       />
                       <FormInput
                         name={`sections.${index}.content.videoThumbnail`}
-                        label="Video Thumbnail"
-                        placeholder="Enter video thumbnail URL"
+                        label={t("videoThumbnail")}
+                        placeholder={t("videoThumbnail")}
                       />
                     </div>
                   )}
 
                   {contentType === "slider" && (
-                    <FormInput photo name={`sections.${index}.content`} label="Slider Images" />
+                    <FormInput photo name={`sections.${index}.content`} label={t("sliderImages")} />
                   )}
                 </div>
               </div>
@@ -137,10 +138,10 @@ export function BlogForm({ initialData }: { initialData?: BlogFormValues }) {
             }
           >
             <Plus className="h-4 w-4 mr-2" />
-            Add Section
+            {t("addSection")}
           </Button>
 
-          <Button type="submit">Save Blog</Button>
+          <Button type="submit">{t("save")}</Button>
         </div>
       </form>
     </Form>
