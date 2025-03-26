@@ -6,6 +6,7 @@ import SectionBookTest from "@/app/components/SectionBookTest";
 import VmotoApp from "@/app/components/VmotoApp";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
+import { getEntities } from "@/app/actions/actions";
 
 export default async function Home() {
   const t = await getTranslations("home");
@@ -91,7 +92,7 @@ export default async function Home() {
       image: "/ss2.webp",
     },
   ];
-
+ 
   return (
     <main className="">
       <HeroSlider />
