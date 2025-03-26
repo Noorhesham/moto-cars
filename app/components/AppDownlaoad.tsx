@@ -24,8 +24,8 @@ const AppDownlaoad = () => {
             </defs>
           </svg>
           <p className=" text-nowrap flex flex-col justify-center  relative ">
-           <div className=" normal-case text-base"> Download the app </div>
-            <span className="uppercase text-xs">Apple Store</span> 
+            <div className=" normal-case text-base"> Download the app </div>
+            <span className="uppercase text-xs">Apple Store</span>
           </p>
         </div>
       </SkewedButton>
@@ -39,8 +39,8 @@ const AppDownlaoad = () => {
             ></path>
           </svg>
           <p className=" text-nowrap flex flex-col justify-center  relative ">
-           <div className=" normal-case text-base"> Download the app </div>
-            <span className="uppercase text-xs">Play Store</span> 
+            <div className=" normal-case text-base"> Download the app </div>
+            <span className="uppercase text-xs">Play Store</span>
           </p>
         </div>
       </SkewedButton>

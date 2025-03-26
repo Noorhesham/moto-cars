@@ -19,11 +19,13 @@ import { business, discover, logos, vehicleCategories } from "../constants";
 import { MobileNav } from "./MobileNav";
 import Language from "./Language";
 import MobileOnly from "./MobileOnly";
+import { useTranslations } from "next-intl";
 
 export function MainNav() {
   const [isOpen, setIsOpen] = React.useState(false);
   const [isScrolling, setIsScrolling] = React.useState(false);
   const pathname = usePathname();
+  const t = useTranslations("mainNav");
 
   return (
     <div className="  ">
@@ -49,7 +51,7 @@ export function MainNav() {
                   <VehiclesDropdown vehicleCategories={vehicleCategories} logos={logos} />
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>Business</NavigationMenuTrigger>
+                  <NavigationMenuTrigger>{t("business")}</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="w-[350px] gap-3 p-4 flex flex-col">
                       {business.map((item) => (
@@ -59,7 +61,7 @@ export function MainNav() {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>Discover</NavigationMenuTrigger>
+                  <NavigationMenuTrigger>{t("discover")}</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="w-[350px] gap-3 p-4 flex flex-col">
                       {discover.map((item) => (
@@ -71,7 +73,7 @@ export function MainNav() {
 
                 <NavigationMenuItem>
                   <Link href="/contacts" legacyBehavior passHref>
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>Contacts</NavigationMenuLink>
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>{t("contacts")}</NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
               </NavigationMenuList>

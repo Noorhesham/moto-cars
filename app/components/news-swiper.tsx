@@ -7,21 +7,30 @@ import { Navigation, Autoplay, Pagination } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 import { SkewedButton } from "./ButtonCustom";
 import MaxWidthWrapper from "./MaxWidthWrapper";
+import { useTranslations } from "next-intl";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import styles from "../HeroSlider.module.css"; // Import as a module
 
-export function NewsSlider({ news }: { news: any }) {
+interface NewsItem {
+  title: string;
+  date: string;
+  image: string;
+  link: string;
+}
+
+export function NewsSlider({ news }: { news: NewsItem[] }) {
+  const t = useTranslations("newsSlider");
   //@ts-ignore
   const swiperRef = React.useRef<SwiperType>();
 
   return (
     <section className={` ${styles.heroSlider} heroSlider relative py-16`}>
       <MaxWidthWrapper noPadding className="flex flex-col">
-        <h3 className="special mb-2 w-fit border-b border-black text-base font-light tracking-[0.2em]">NEWS</h3>
-        <h2 className=" mb-4 lg:mb-8 text-3xl lg:text-5xl font-bold">LATEST NEWS</h2>
+        <h3 className="special mb-2 w-fit border-b border-black text-base font-light tracking-[0.2em]">{t("title")}</h3>
+        <h2 className=" mb-4 lg:mb-8 text-3xl lg:text-5xl font-bold">{t("subtitle")}</h2>
 
         <div className="relative  max-w-full overflow-hidden">
           <Swiper
@@ -67,7 +76,7 @@ export function NewsSlider({ news }: { news: any }) {
                     <div>
                       <h3 className="text-white text-xl font-bold mb-4">{item.title}</h3>
                       <a href={item.link} className="text-white hover:underline">
-                        Read more
+                        {t("readMore")}
                       </a>
                     </div>
                   </div>
@@ -78,7 +87,7 @@ export function NewsSlider({ news }: { news: any }) {
         </div>
 
         <div className="mt-12 flex justify-start">
-          <SkewedButton>READ ALL NEWS</SkewedButton>
+          <SkewedButton>{t("readAllNews")}</SkewedButton>
         </div>
       </MaxWidthWrapper>
     </section>

@@ -39,5 +39,206 @@
     "view": "View",
     "colors": "Colors",
     "features": "Features"
+  },
+  "home": {
+    "news": {
+      "eicma2024": {
+        "title": "EICMA 2024",
+        "date": "Nov 2024"
+      },
+      "vmotoEbixon": {
+        "title": "Vmoto and Ebixon: a great success for the launch event in Malaysia.",
+        "date": "May 2024"
+      },
+      "eicmaRidingFest": {
+        "title": "Vmoto to be Official Electric Scooter Supplier of EICMA Riding Fest.",
+        "date": "Apr 2024"
+      },
+      "partnership": {
+        "title": "New Partnership Announcement",
+        "date": "Mar 2024"
+      },
+      "sustainableMobility": {
+        "title": "Sustainable Urban Mobility Solutions",
+        "date": "Feb 2024"
+      },
+      "innovation": {
+        "title": "Innovation in Electric Vehicle Technology",
+        "date": "Jan 2024"
+      }
+    },
+    "ambassadors": {
+      "ducatiCorse": {
+        "name": "DUCATI CORSE",
+        "role": "OFFICIAL ELECTRIC SCOOTER SUPPLIER 2022/2023-2024",
+        "description": "Dario Marchetti, former pro rider and Technical Director of the Ducati DRE Racetrack Academy and DRE Road."
+      },
+      "ducatiCorseOffRoad": {
+        "name": "DUCATI CORSE OFF-ROAD",
+        "role": "OFFICIAL ELECTRIC SCOOTER SUPPLIER 2024",
+        "description": "Leading expert in electric motorcycle development with over 15 years of racing experience."
+      },
+      "jorgeLorenzo": {
+        "name": "JORGE LORENZO",
+        "role": "BRAND testimonial",
+        "description": "The five time MotoGp World Champion, lifestyle king, beloved and followed by more than 1.8 million followers on instagram is the company's testimonial and spokesperson for its values."
+      },
+      "darioMarchetti": {
+        "name": "DARIO MARCHETTI",
+        "role": "BRAND AMBASSADOR",
+        "description": "Dario Marchetti, former pro rider and Technical Director of the Ducati DRE Racetrack Academy and DRE Road."
+      }
+    }
+  },
+  "mainSlider": {
+    "slides": {
+      "slide1": {
+        "cta": "DISCOVER THE ELECTRIC SOLUTION"
+      },
+      "slide2": {
+        "cta": "Watch the video"
+      },
+      "slide3": {
+        "cta": "JOIN THE REVOLUTION",
+        "content": {
+          "line1": "100% ELECTRIC Enviable performance.",
+          "line2": "The B2B vehicle that never disappoints."
+        }
+      },
+      "slide4": {
+        "cta": "VIEW OUR RANGE",
+        "content": {
+          "line1": "100% ELECTRIC Enviable performance.",
+          "line2": "The B2B vehicle that never disappoints."
+        }
+      },
+      "slide5": {
+        "cta": "BUSINESS SOLUTIONS",
+        "content": {
+          "line1": "100% ELECTRIC Enviable performance.",
+          "line2": "The B2B vehicle that never disappoints."
+        }
+      },
+      "slide6": {
+        "title": "ELECTRIC PERFORMANCE",
+        "cta": "DISCOVER MORE"
+      },
+      "slide8": {
+        "title": "SMART COMMUTING",
+        "cta": "LEARN MORE"
+      },
+      "slide9": {
+        "title": "ZERO EMISSIONS",
+        "cta": "GO GREEN TODAY"
+      },
+      "slide10": {
+        "title": "CITY EXPLORER",
+        "cta": "START YOUR JOURNEY"
+      },
+      "slide11": {
+        "title": "FLEET SOLUTIONS",
+        "cta": "CORPORATE PROGRAMS"
+      },
+      "slide12": {
+        "title": "ELECTRIC INNOVATION",
+        "cta": "SEE WHAT'S NEW"
+      },
+      "slide13": {
+        "title": "SUSTAINABLE DELIVERY",
+        "cta": "BUSINESS FLEET"
+      },
+      "slide14": {
+        "title": "URBAN FREEDOM",
+        "cta": "EXPLORE MODELS"
+      },
+      "slide15": {
+        "title": "ECO MOBILITY",
+        "cta": "GO ELECTRIC"
+      },
+      "slide16": {
+        "title": "FUTURE READY",
+        "cta": "LEARN MORE"
+      },
+      "slide17": {
+        "title": "SMART TRANSPORT",
+        "cta": "DISCOVER NOW"
+      },
+      "slide19": {
+        "title": "CLEAN ENERGY",
+        "cta": "JOIN THE MOVEMENT"
+      },
+      "slide20": {
+        "title": "ELECTRIC POWER",
+        "cta": "EXPERIENCE MORE"
+      },
+      "slide21": {
+        "title": "GREEN MOBILITY",
+        "cta": "START TODAY"
+      },
+      "slide22": {
+        "title": "FUTURE MOBILITY",
+        "cta": "DISCOVER THE FUTURE"
+      }
+    }
+  },
+  "modelRange": {
+    "title": "MODEL RANGE",
+    "categories": {
+      "eMoto": "E-MOTO",
+      "eScooter": "E-SCOOTER",
+      "eFleet": "E-FLEET",
+      "chargingSystems": "CHARGING SYSTEMS"
+    }
+  },
+  "sectionBookTest": {
+    "title": "Global leader in electric mobility solutions",
+    "description": "As a leader in electric scooter manufacturing, we provide daily green mobility solutions for urban commuters and commercial operations worldwide. Plus, we always have promotions to make your switch to electric even easier.",
+    "cta": "Book A Test Ride"
+  },
+  "vmotoApp": {
+    "title": "VMOTO APP",
+    "description": "For those who seek a connection with the world around them"
+  },
+  "newsSlider": {
+    "title": "NEWS",
+    "subtitle": "LATEST NEWS",
+    "readMore": "Read more",
+    "readAllNews": "READ ALL NEWS"
+  },
+  "appDownload": {
+    "downloadApp": "Download the app",
+    "appleStore": "Apple Store",
+    "playStore": "Play Store"
+  },
+  "footer": {
+    "newsletter": {
+      "title": "JOIN THE VMOTO NEWSLETTER",
+      "emailPlaceholder": "Email",
+      "signUp": "SIGN UP",
+      "privacyPolicy": "I accept the Privacy Policy"
+    },
+    "links": {
+      "vehicles": "Vehicles",
+      "fullRangeVehicles": "Full-range Vehicles",
+      "company": "Company",
+      "storeLocator": "Store Locator",
+      "becomeDealer": "Become a dealer",
+      "investorCentre": "Investor Centre",
+      "services": "Services",
+      "manuals": "Manuals",
+      "warranty": "Warranty",
+      "rmi": "RMI",
+      "contentPortal": "Content Portal"
+    },
+    "bottomBar": {
+      "copyright": "© 2025 Vmoto Limited - All rights reserved",
+      "cookiePolicy": "Cookie Policy",
+      "privacyPolicy": "Privacy Policy"
+    }
+  },
+  "mainNav": {
+    "business": "Business",
+    "discover": "Discover",
+    "contacts": "Contacts"
   }
 }

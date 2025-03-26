@@ -8,13 +8,12 @@ import type { Swiper as SwiperType } from "swiper";
 import { cn } from "@/lib/utils";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useTranslations } from "next-intl";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-
-const categories = ["E-MOTO", "E-SCOOTER", "E-FLEET", "CHARGING SYSTEMS"];
 
 const products = {
   "E-MOTO": [
@@ -56,15 +55,23 @@ const products = {
 };
 
 export function ModelRange() {
+  const t = useTranslations("modelRange");
   const [activeCategory, setActiveCategory] = React.useState("E-MOTO");
   //@ts-ignore
   const swiperRef = React.useRef<SwiperType>();
+
+  const categories = [
+    t("categories.eMoto"),
+    t("categories.eScooter"),
+    t("categories.eFleet"),
+    t("categories.chargingSystems"),
+  ];
 
   return (
     <section className="relative py-16">
       <MaxWidthWrapper noPadding className="flex flex-col">
         <h2 className="specail mb-5 w-fit border-b special  border-input text-base font-light tracking-[0.2em]">
-          MODEL RANGE
+          {t("title")}
         </h2>
         <div className="flex items-center justify-between">
           {/* Mobile Select */}
@@ -129,10 +136,10 @@ export function ModelRange() {
             onBeforeInit={(swiper) => {
               swiperRef.current = swiper;
             }}
-            key={activeCategory} // Add this inside the <Swiper> component
+            key={activeCategory}
             slidesPerView={1}
             spaceBetween={32}
-            loop={products[activeCategory as keyof typeof products]?.length > 3} // Disable loop for small arrays
+            loop={products[activeCategory as keyof typeof products]?.length > 3}
             speed={800}
             autoplay={{
               delay: 3000,
