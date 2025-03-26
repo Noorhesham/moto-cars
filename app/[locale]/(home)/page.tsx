@@ -7,6 +7,7 @@ import VmotoApp from "@/app/components/VmotoApp";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { getEntities } from "@/app/actions/actions";
+// import Product from "@/app/models/Product";
 
 export default async function Home() {
   const t = await getTranslations("home");
@@ -92,7 +93,8 @@ export default async function Home() {
       image: "/ss2.webp",
     },
   ];
- 
+  // const products = await Product.find({}).select("color starter category");
+  // console.log(products);
   return (
     <main className="">
       <HeroSlider />
