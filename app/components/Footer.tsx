@@ -15,17 +15,17 @@ const socialLinks = [
 ];
 
 const footerLinks = {
-  Vehicles: [{ name: "Full-range Vehicles", href: "https://vmoto.com/models" }],
+  Vehicles: [{ name: "Full-range Vehicles", href: "/models" }],
   Company: [
-    { name: "Store Locator", href: "https://vmoto.com/store-locator" },
-    { name: "Become a dealer", href: "https://vmoto.com/become-a-dealer" },
-    { name: "Investor Centre", href: "https://vmoto.com/investor-centre" },
+    { name: "Store Locator", href: "/store-locator" },
+    { name: "Become a dealer", href: "/become-a-dealer" },
+    { name: "Investor Centre", href: "/investor-centre" },
   ],
   Services: [
-    { name: "Manuals", href: "https://vmoto.com/manuels-dutilisation" },
-    { name: "Warranty", href: "https://vmoto.com/garanties" },
-    { name: "RMI", href: "https://swan-vmoto.softway.it/service/" },
-    { name: "Content Portal", href: "https://vmoto.com/content-portal" },
+    { name: "Manuals", href: "/manuels-dutilisation" },
+    { name: "Warranty", href: "/garanties" },
+    { name: "RMI", href: "/service" },
+    { name: "Content Portal", href: "/content-portal" },
   ],
 };
 
@@ -64,7 +64,7 @@ export function Footer() {
             <div className="flex flex-col gap-y-12 md:pt-[100px]">
               {/* Top Section with Logos */}
               <div className="flex justify-between">
-                <Link href="https://vmoto.com/" className="-m-1.5 p-1.5">
+                <Link href="/" className="-m-1.5 p-1.5">
                   <span className="sr-only">Vmoto</span>
                   <Image src="/logo-2.webp" alt="VMOTO" width={170} height={50} />
                 </Link>

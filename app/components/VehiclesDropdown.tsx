@@ -4,11 +4,12 @@ import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function VehiclesDropdown({ vehicleCategories, logos }) {
   const [open, setOpen] = useState(false);
   let closeTimeout;
-
+  const t = useTranslations("mainNav");
   return (
     <DropdownMenu modal={false} open={open} onOpenChange={setOpen}>
       <DropdownMenuTrigger asChild>
@@ -24,7 +25,7 @@ export default function VehiclesDropdown({ vehicleCategories, logos }) {
           size="sm"
           className="hover:underline flex items-center gap-x-1 text-sm font-semibold leading-6"
         >
-          Vehicles
+          {t("Vehicles")}
           <ChevronDown
             className={`relative !bg-transparent top-[1px] ml-1 h-3 w-3 transition duration-300 
             ${open ? "rotate-180" : ""}`}

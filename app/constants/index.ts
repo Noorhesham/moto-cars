@@ -46,29 +46,35 @@ export const business = [
   {
     title: "Fleet Solutions",
     href: "/business/fleet",
-    description: "Electric vehicle fleet management for businesses.",
   },
   {
     title: "Dealerships",
     href: "/business/dealerships",
-    description: "Join our growing network of VMOTO dealerships.",
+  },
+  {
+    title: "Smart Connectivity & IOT",
+    href: "/business/vmoto-smart-connectivity-iot",
+  },
+  {
+    title: "RMI",
+    href: "/service",
   },
 ];
 
 export const discover = [
   {
-    title: "Technology",
-    href: "/discover/technology",
+    title: "News",
+    href: "/news",
     description: "Explore our cutting-edge electric vehicle technology.",
   },
   {
-    title: "Sustainability",
-    href: "/discover/sustainability",
+    title: "FAQ",
+    href: "/faq",
     description: "Our commitment to a sustainable future.",
   },
   {
-    title: "VMoto People",
-    href: "/vmoto-team",
+    title: "Factory",
+    href: "/fabriek",
     description: "Our commitment to a sustainable future.",
   },
 ];

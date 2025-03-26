@@ -5,6 +5,8 @@ import type React from "react";
 import { useState, type FormEvent } from "react";
 import { ChevronDown } from "lucide-react";
 import { SkewedButton } from "./ButtonCustom";
+import { useTranslations } from "next-intl";
+import { useParams } from "next/navigation";
 
 // Sample countries list - you can replace with your own data
 const countries = [
@@ -24,6 +26,10 @@ const countries = [
 ];
 
 export default function UrbanForm() {
+  const t = useTranslations("urbanForm");
+  const params = useParams();
+  const isRTL = params.locale === "ar";
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -39,15 +45,15 @@ export default function UrbanForm() {
   const validate = () => {
     const newErrors: Record<string, string> = {};
 
-    if (!formData.firstName.trim()) newErrors.firstName = "First name is required";
-    if (!formData.lastName.trim()) newErrors.lastName = "Last name is required";
-    if (!formData.country.trim()) newErrors.country = "Country cannot be blank";
+    if (!formData.firstName.trim()) newErrors.firstName = t("validation.required.firstName");
+    if (!formData.lastName.trim()) newErrors.lastName = t("validation.required.lastName");
+    if (!formData.country.trim()) newErrors.country = t("validation.required.country");
     if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
+      newErrors.email = t("validation.required.email");
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Email is invalid";
+      newErrors.email = t("validation.invalid.email");
     }
-    if (!formData.message.trim()) newErrors.message = "Message is required";
+    if (!formData.message.trim()) newErrors.message = t("validation.required.message");
 
     return newErrors;
   };
@@ -100,14 +106,14 @@ export default function UrbanForm() {
   };
 
   return (
-    <div className="bg-white  p-8 rounded-lg shadow-lg">
+    <div className={`bg-white p-8 rounded-lg shadow-lg ${isRTL ? "rtl" : "ltr"}`}>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <p className="text-gray-500 mb-2">Please enter your full name.</p>
+          <p className="text-gray-500 mb-2">{t("fullName.label")}</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label htmlFor="firstName" className="block text-gray-700 font-medium mb-1">
-                NAME <span className="text-red-500">*</span>
+                {t("fullName.firstName")} <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
@@ -121,7 +127,7 @@ export default function UrbanForm() {
             </div>
             <div>
               <label htmlFor="lastName" className="block text-gray-700 font-medium mb-1">
-                LAST NAME <span className="text-red-500">*</span>
+                {t("fullName.lastName")} <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
@@ -138,7 +144,7 @@ export default function UrbanForm() {
 
         <div>
           <label htmlFor="country" className="block text-gray-700 font-medium mb-1">
-            COUNTRY <span className="text-red-500">*</span>
+            {t("country.label")} <span className="text-red-500">*</span>
           </label>
           <div className="relative">
             <div
@@ -146,7 +152,7 @@ export default function UrbanForm() {
               onClick={() => setShowCountryDropdown(!showCountryDropdown)}
             >
               <span className={formData.country ? "text-gray-900" : "text-gray-400"}>
-                {formData.country || "Select an option"}
+                {formData.country || t("country.placeholder")}
               </span>
               <ChevronDown className="h-4 w-4 text-gray-500" />
             </div>
@@ -170,16 +176,16 @@ export default function UrbanForm() {
 
         <div>
           <label htmlFor="email" className="block text-gray-700 font-medium mb-1">
-            EMAIL ADDRESS <span className="text-red-500">*</span>
+            {t("email.label")} <span className="text-red-500">*</span>
           </label>
-          <p className="text-gray-500 text-sm mb-2">Please enter your email so we can get in touch.</p>
+          <p className="text-gray-500 text-sm mb-2">{t("email.description")}</p>
           <input
             type="email"
             id="email"
             name="email"
             value={formData.email}
             onChange={handleChange}
-            placeholder="e.g. psherman@wallaby.com"
+            placeholder={t("email.placeholder")}
             className="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-blue-500"
           />
           {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
@@ -187,15 +193,15 @@ export default function UrbanForm() {
 
         <div>
           <label htmlFor="message" className="block text-gray-700 font-medium mb-1">
-            MESSAGE <span className="text-red-500">*</span>
+            {t("message.label")} <span className="text-red-500">*</span>
           </label>
-          <p className="text-gray-500 text-sm mb-2">Please enter your comments.</p>
+          <p className="text-gray-500 text-sm mb-2">{t("message.description")}</p>
           <textarea
             id="message"
             name="message"
             value={formData.message}
             onChange={handleChange}
-            placeholder="e.g. The reason for my enquiry is..."
+            placeholder={t("message.placeholder")}
             rows={4}
             className="w-full border-b border-gray-300 py-2 focus:outline-none focus:border-blue-500 resize-none"
           />
@@ -205,10 +211,10 @@ export default function UrbanForm() {
         <div className="border border-gray-200 p-4 rounded-md flex items-center gap-4">
           <input type="checkbox" id="captcha" className="h-5 w-5 border-gray-300 rounded" />
           <label htmlFor="captcha" className="text-gray-700 flex items-center gap-2">
-            <span className="text-gray-500 font-arabic">أنا الإنسان</span>
+            <span className="text-gray-500">{t("captcha.label")}</span>
             <div className="flex flex-col items-center">
               <img src="/captcha-icon.png" alt="hCaptcha" className="h-8 w-8" />
-              <div className="text-[10px] text-gray-500">Privacy - Terms</div>
+              <div className="text-[10px] text-gray-500">{t("captcha.privacyTerms")}</div>
             </div>
           </label>
         </div>
@@ -217,9 +223,9 @@ export default function UrbanForm() {
           <SkewedButton
             type="submit"
             disabled={isSubmitting}
-            className=" text-black font-bold py-3 px-8 uppercase hover:bg-[#6dcfe3] hover:before:bg-[#6dcfe3] transition-colors"
+            className="text-black font-bold py-3 px-8 uppercase hover:bg-[#6dcfe3] hover:before:bg-[#6dcfe3] transition-colors"
           >
-            {isSubmitting ? "SENDING..." : "CONTACT US"}
+            {isSubmitting ? t("submit.sending") : t("submit.default")}
           </SkewedButton>
         </div>
       </form>

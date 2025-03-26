@@ -6,39 +6,36 @@ import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
 import { SkewedButton } from "@/app/components/ButtonCustom";
-
-const tabs = [
-  { id: "products", label: "PRODUCTS" },
-  { id: "sustainability", label: "SUSTAINABILITY" },
-];
-
-const faqs = {
-  products: [
-    {
-      question: "Why choose an ev rather than an icev, while purchasing a new vehicle?",
-      answer:
-        "Electric vehicles offer numerous advantages including lower operating costs, zero direct emissions, quieter operation, and often better performance. They also benefit from government incentives and lower maintenance requirements.",
-    },
-    {
-      question: "What is the current status of the global ev market in the world?",
-      answer:
-        "The global EV market is experiencing rapid growth, with increasing adoption rates worldwide. Many countries are setting ambitious targets for EV adoption and manufacturers are expanding their electric vehicle lineups.",
-    },
-    // Add more product FAQs
-  ],
-  sustainability: [
-    {
-      question: "How do electric scooters contribute to environmental sustainability?",
-      answer:
-        "Electric scooters produce zero direct emissions, helping reduce air pollution and combat climate change. They also require less energy and resources to manufacture and maintain compared to traditional vehicles.",
-    },
-    // Add more sustainability FAQs
-  ],
-};
+import { useTranslations } from "next-intl";
 
 export function FAQ() {
   const [activeTab, setActiveTab] = useState("products");
   const [openQuestion, setOpenQuestion] = useState<string | null>(null);
+  const t = useTranslations("faq");
+
+  const tabs = [
+    { id: "products", label: t("tabs.products") },
+    { id: "sustainability", label: t("tabs.sustainability") },
+  ];
+
+  const faqs = {
+    products: [
+      {
+        question: t("questions.products.evChoice.question"),
+        answer: t("questions.products.evChoice.answer"),
+      },
+      {
+        question: t("questions.products.marketStatus.question"),
+        answer: t("questions.products.marketStatus.answer"),
+      },
+    ],
+    sustainability: [
+      {
+        question: t("questions.sustainability.environmental.question"),
+        answer: t("questions.sustainability.environmental.answer"),
+      },
+    ],
+  };
 
   return (
     <div className=" bg-white pt-32">
@@ -46,24 +43,19 @@ export function FAQ() {
         <div className="space-y-8 w-full">
           <div className="space-y-2 w-full">
             <p className="text-sm special uppercase tracking-wider text-gray-600 border-b border-black w-fit">
-              FREQUENTLY ASKED QUESTIONS
+              {t("title")}
             </p>
-            <h1 className="text-5xl font-bold tracking-tight">UNLOCKING THE WORLD OF ELECTRIC SCOOTERS</h1>
+            <h1 className="text-5xl font-bold tracking-tight">{t("subtitle")}</h1>
           </div>
 
           <div className="space-y-4">
-            <p className="text-gray-600 leading-relaxed">
-              Welcome to our FAQ page! Here you'll find answers to some of the most common questions we get about our
-              electric scooters, both for personal and business use. Whether you're looking for information on our
-              products, our policies, or how to get started with electric scooters, we're here to help.
-            </p>
+            <p className="text-gray-600 leading-relaxed">{t("welcome")}</p>
 
             <p className="text-gray-600 leading-relaxed">
-              If you can't find the answer to your question here, please don't hesitate to contact us by visiting our{" "}
+              {t("contactPrompt")}{" "}
               <Link href="/contact" className="text-blue-600 hover:underline">
-                'Contact Us'
-              </Link>{" "}
-              page. We're always happy to help!
+                {t("contactPrompt")}
+              </Link>
             </p>
           </div>
 
@@ -81,7 +73,7 @@ export function FAQ() {
               </SkewedButton>
             ))}
           </div>
-          
+
           {/* FAQ Items */}
           <div className="space-y-4">
             {faqs[activeTab as keyof typeof faqs].map((faq) => (

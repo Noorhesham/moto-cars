@@ -3,13 +3,16 @@ import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
 import VmotoBusinessModel from "@/app/components/Table";
 import Image from "next/image";
 import React from "react";
+import { useTranslations } from "next-intl";
 
 const page = () => {
+  const t = useTranslations("laadmogelijkheden");
+
   return (
     <div className=" pt-24">
       <VmotoBusinessModel />
       <MaxWidthWrapper>
-        <Heading text="APPLICABLE VEHICLE PLATFORMS" />
+        <Heading text={t("title")} />
         <div className=" grid gap-5 mt-5 grid-cols-3 ">
           <div className="">
             <div className=" w-full h-80 relative">

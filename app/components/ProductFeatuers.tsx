@@ -6,71 +6,79 @@ import { Navigation, Autoplay, Pagination } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
+import { useParams } from "next/navigation";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { SkewedButton } from "./ButtonCustom";
 import styles from "../brand.module.css";
-const features = [
-  {
-    title: "Smart display",
-    description: "With display protector from antivandalism",
-    image: "/solutions1.png",
-  },
-  {
-    title: "QR code position and protector",
-    description: "You know the location of the vehicle at any time",
-    image: "/solutions2.png",
-  },
-  {
-    title: "Mobile Phone Carrier",
-    description: "Facilitates driving even for the user who is not familiar with the roadways",
-    image: "/solutions3.png",
-  },
-  {
-    title: "5 minutes maintenance",
-    description: "Patented single screw battery change for easy maintenance",
-    image: "/solutions4.png",
-  },
-  {
-    title: "Easy Repair",
-    description: "The fairings can be easily removed to reach the electronic components",
-    image: "/solutions5.png",
-  },
-  {
-    title: "Latest CATL NCM lithium battery",
-    description: "Adaptable to different models and with longer cycle of 1500",
-    image: "/solutions6.png",
-  },
-  {
-    title: "Special designed covers",
-    description: "Protect alla the cables from vandalism",
-    image: "/solutions7.png",
-  },
-  {
-    title: "Special designed covers",
-    description: "Protect alla the cables from vandalism",
-    image: "/solutions8.png",
-  },
-  {
-    title: "Special exposed frame",
-    description: "Better protection of the vehicle body from fallen and breakage",
-    image: "/solutions9.png",
-  },
-  {
-    title: "Special exposed frame",
-    description: "Better protection of the vehicle body from fallen and breakage",
-    image: "/solutions10.png",
-  },
+
+const featureImages = [
+  "/solutions1.png",
+  "/solutions2.png",
+  "/solutions3.png",
+  "/solutions4.png",
+  "/solutions5.png",
+  "/solutions6.png",
+  "/solutions7.png",
+  "/solutions8.png",
+  "/solutions9.png",
+  "/solutions10.png",
 ];
 
 export function ProductFeatures() {
+  const t = useTranslations("productFeatures");
+  const params = useParams();
+  const isRTL = params.locale === "ar";
   const swiperRef = React.useRef<SwiperType>(null);
 
+  // Get features from translations
+  const features = [
+    {
+      title: t("features.smartDisplay.title"),
+      description: t("features.smartDisplay.description"),
+      image: featureImages[0],
+    },
+    {
+      title: t("features.qrCode.title"),
+      description: t("features.qrCode.description"),
+      image: featureImages[1],
+    },
+    {
+      title: t("features.mobilePhone.title"),
+      description: t("features.mobilePhone.description"),
+      image: featureImages[2],
+    },
+    {
+      title: t("features.maintenance.title"),
+      description: t("features.maintenance.description"),
+      image: featureImages[3],
+    },
+    {
+      title: t("features.repair.title"),
+      description: t("features.repair.description"),
+      image: featureImages[4],
+    },
+    {
+      title: t("features.battery.title"),
+      description: t("features.battery.description"),
+      image: featureImages[5],
+    },
+    {
+      title: t("features.covers.title"),
+      description: t("features.covers.description"),
+      image: featureImages[6],
+    },
+    {
+      title: t("features.frame.title"),
+      description: t("features.frame.description"),
+      image: featureImages[7],
+    },
+  ];
+
   return (
-    <section className={`relative brand-ambassadors ${styles.brandambassadors}`}>
-      {" "}
+    <section className={`relative brand-ambassadors ${styles.brandambassadors} ${isRTL ? "rtl" : "ltr"}`}>
       <MaxWidthWrapper>
         <div className="relative">
           <Swiper
@@ -105,13 +113,14 @@ export function ProductFeatures() {
               disableOnInteraction: false,
             }}
             className="!pb-12"
+            dir={isRTL ? "rtl" : "ltr"}
           >
             {features.map((feature, index) => (
               <SwiperSlide key={index}>
                 <div className="flex flex-col gap-4">
-                  <div className="relative w-full overflow-hidden !h-[400px] ">
+                  <div className="relative w-full overflow-hidden !h-[400px]">
                     <Image
-                      src={feature.image || "/placeholder.svg"}
+                      src={feature.image}
                       alt={feature.title}
                       fill
                       className="object-cover transition-transform duration-300 hover:scale-110"
@@ -119,7 +128,7 @@ export function ProductFeatures() {
                   </div>
                   <div className="space-y-2">
                     <h3 className="text-2xl text-black font-bold">{feature.title}</h3>
-                    <p className=" text-black">{feature.description}</p>
+                    <p className="text-black">{feature.description}</p>
                   </div>
                 </div>
               </SwiperSlide>

@@ -1,9 +1,15 @@
+"use client";
 import React from "react";
 import { SkewedButton } from "./ButtonCustom";
+import { useLocale, useTranslations } from "next-intl";
 
 const AppDownlaoad = () => {
+  const t = useTranslations("appDownload");
+  const locale = useLocale();
+  const isRTL = locale === "ar";
+
   return (
-    <div className="flex items-center gap-2 lg:gap-4">
+    <div className={`flex items-center gap-2 lg:gap-4 ${isRTL ? "rtl" : "ltr"}`}>
       <SkewedButton className="!text-black">
         <div className="!flex items-center gap-2">
           <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -23,24 +29,23 @@ const AppDownlaoad = () => {
               </clipPath>
             </defs>
           </svg>
-          <p className=" text-nowrap flex flex-col justify-center  relative ">
-            <div className=" normal-case text-base"> Download the app </div>
-            <span className="uppercase text-xs">Apple Store</span>
+          <p className="text-nowrap flex flex-col justify-center relative">
+            <div className="normal-case text-base">{t("downloadApp")}</div>
+            <span className="uppercase text-xs">{t("appleStore")}</span>
           </p>
         </div>
       </SkewedButton>
       <SkewedButton className="before:bg-white !text-black">
         <div className="!flex items-center gap-2">
-          {" "}
           <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M1.48118 0.198862C1.88279 0.14672 2.29003 0.235804 2.63318 0.450862L14.3332 7.10186L11.3722 10.0989L1.48118 0.198862ZM0.581185 1.09886C0.52476 1.2948 0.497468 1.49798 0.500184 1.70186V20.2959C0.497468 20.4997 0.52476 20.7029 0.581185 20.8989L10.4812 10.9989L0.581185 1.09886ZM11.3812 11.8989L1.48118 21.7989C1.88298 21.8557 2.29183 21.7663 2.63318 21.5469L14.3332 14.8959L11.3812 11.8989ZM19.0492 9.79286L15.5032 7.77686L12.2632 10.9989L15.4942 14.2299L19.0402 12.2139C20.2102 11.5479 20.2102 10.4499 19.0402 9.78386L19.0492 9.79286Z"
               fill="black"
             ></path>
           </svg>
-          <p className=" text-nowrap flex flex-col justify-center  relative ">
-            <div className=" normal-case text-base"> Download the app </div>
-            <span className="uppercase text-xs">Play Store</span>
+          <p className="text-nowrap flex flex-col justify-center relative">
+            <div className="normal-case text-base">{t("downloadApp")}</div>
+            <span className="uppercase text-xs">{t("playStore")}</span>
           </p>
         </div>
       </SkewedButton>

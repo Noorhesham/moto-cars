@@ -9,6 +9,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 const formSchema = z.object({
   username: z.string().min(1, "Username is required"),
@@ -17,6 +18,7 @@ const formSchema = z.object({
 
 export function LoginPortal() {
   const [showPassword, setShowPassword] = useState(false);
+  const t = useTranslations("portal");
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -34,7 +36,7 @@ export function LoginPortal() {
     <div className="min-h-screen  p-6 flex flex-col items-center justify-center gap-6">
       {/* Main Login Card */}
       <div className="w-full max-w-md bg-white rounded-lg p-8 shadow-lg">
-        <h1 className="text-2xl font-semibold text-center mb-8">Log in to the portal of Vmoto Italy</h1>
+        <h1 className="text-2xl font-semibold text-center mb-8">{t("loginTitle")}</h1>
 
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -44,8 +46,8 @@ export function LoginPortal() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel className="flex gap-1">
-                    Username
-                    <span className="text-red-500">*</span>
+                    {t("username")}
+                    <span className="text-red-500">{t("required")}</span>
                   </FormLabel>
                   <FormControl>
                     <Input
@@ -64,8 +66,8 @@ export function LoginPortal() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel className="flex gap-1">
-                    Password
-                    <span className="text-red-500">*</span>
+                    {t("password")}
+                    <span className="text-red-500">{t("required")}</span>
                   </FormLabel>
                   <FormControl>
                     <div className="relative">
@@ -96,31 +98,31 @@ export function LoginPortal() {
                 "w-full bg-transparent text-[#4A90E2] border-2 border-[#4A90E2] hover:bg-[#4A90E2] hover:text-white transition-colors"
               )}
             >
-              Log in
+              {t("loginButton")}
             </Button>
           </form>
         </Form>
 
         <button className="w-full text-center text-sm text-[#4A90E2] mt-4 hover:underline">
-          Forgot your password?
+          {t("forgotPassword")}
         </button>
       </div>
 
       {/* RMI Service Card */}
       <div className="w-full max-w-md bg-white rounded-lg p-8 shadow-lg">
-        <h2 className="text-xl font-semibold text-center mb-6">RMI Service for Independent Operators</h2>
+        <h2 className="text-xl font-semibold text-center mb-6">{t("rmiTitle")}</h2>
         <div className="space-y-4">
           <Button
             variant="outline"
             className="w-full border-2 border-[#4A90E2] text-[#4A90E2] hover:bg-[#4A90E2] hover:text-white"
           >
-            IO Registration
+            {t("ioRegistration")}
           </Button>
           <Button
             variant="outline"
             className="w-full border-2 border-[#4A90E2] text-[#4A90E2] hover:bg-[#4A90E2] hover:text-white"
           >
-            IO&apos;s Employee registration
+            {t("ioEmployeeRegistration")}
           </Button>
         </div>
       </div>

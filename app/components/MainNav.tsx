@@ -55,7 +55,11 @@ export function MainNav() {
                   <NavigationMenuContent>
                     <ul className="w-[350px] gap-3 p-4 flex flex-col">
                       {business.map((item) => (
-                        <ListItem key={item.title} title={item.title} href={item.href}></ListItem>
+                        <ListItem
+                          key={item.title}
+                          title={t(`businessMenu.${item.title.toLowerCase().replace(/\s+/g, "")}`)}
+                          href={item.href}
+                        />
                       ))}
                     </ul>
                   </NavigationMenuContent>
@@ -65,7 +69,11 @@ export function MainNav() {
                   <NavigationMenuContent>
                     <ul className="w-[350px] gap-3 p-4 flex flex-col">
                       {discover.map((item) => (
-                        <ListItem key={item.title} title={item.title} href={item.href}></ListItem>
+                        <ListItem
+                          key={item.title}
+                          title={t(`discoverMenu.${item.title.toLowerCase().replace(/\s+/g, "")}`)}
+                          href={item.href}
+                        />
                       ))}
                     </ul>
                   </NavigationMenuContent>

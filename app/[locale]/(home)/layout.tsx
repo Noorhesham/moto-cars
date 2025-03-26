@@ -3,13 +3,13 @@ import { Footer } from "@/app/components/Footer";
 
 export default async function RootLayout({
   children,
-  params,
+  params: { locale },
 }: Readonly<{
   children: React.ReactNode;
   params: { locale: string };
 }>) {
   return (
-    <div className=" relative">
+    <div dir={locale === "ar" ? "rtl" : "ltr"} className=" relative">
       <MainNav />
       {children}
       <Footer />

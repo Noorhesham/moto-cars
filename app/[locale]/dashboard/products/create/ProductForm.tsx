@@ -97,7 +97,7 @@ export function ProductForm({ initialData }: ProductFormProps) {
   };
   return (
     <FormProvider {...form}>
-      <form onSubmit={handleSubmit(onSubmit)} className=" mx-auto ">
+      <form onSubmit={handleSubmit(onSubmit)} className="  w-full mx-auto ">
         <MaxWidthWrapper className="">
           {" "}
           <h1 className="text-4xl font-bold mb-4"> {initialData ? "Edit" : "Create"} Product</h1>

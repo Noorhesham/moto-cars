@@ -228,7 +228,8 @@
       "manuals": "Manuals",
       "warranty": "Warranty",
       "rmi": "RMI",
-      "contentPortal": "Content Portal"
+      "contentPortal": "Content Portal",
+      "full-rangevehicles": ""
     },
     "bottomBar": {
       "copyright": "© 2025 Vmoto Limited - All rights reserved",
@@ -239,6 +240,253 @@
   "mainNav": {
     "business": "Business",
     "discover": "Discover",
-    "contacts": "Contacts"
+    "contacts": "Contacts",
+    "Vehicles": "Vehicles",
+    "businessMenu": {
+      "storeLocator": "Store Locator",
+      "becomeDealer": "Become a dealer",
+      "investorCentre": "Investor Centre",
+      "fleetsolutions": "Fleet Solutions",
+      "dealerships": "Dealerships",
+      "smartconnectivity&iot": "Smart Connectivity & IoT",
+      "rmi": "RMI Service"
+    },
+    "discoverMenu": {
+      "aboutUs": "About Us",
+      "news": "News",
+      "events": "Events",
+      "careers": "Careers",
+      "faq": "FAQ",
+      "factory": "Factory"
+    }
+  },
+  "vmotoTeam": {
+    "heroTitle": "VMOTO PEOPLE",
+    "sectionTitle": "OUR MANAGEMENT TEAM",
+    "description": "Our swift progress can be attributed to a visionary management team that excels in research and innovation. Comprising visionaries, creatives, entrepreneurs, and mobility enthusiasts, our team is dedicated to revolutionizing transportation. Their commitment to creating a sustainable lifestyle drives our focus on delivering top-quality and high-performance products. By prioritizing sustainability, our team ensures that Vmoto remains at the forefront of urban mobility, consistently pushing the boundaries of what's possible in electric vehicle technology.",
+    "ambassadors": {
+      "ivanTeo": {
+        "name": "Ivan Teo",
+        "title": "Finance Director at Vmoto.",
+        "description": "A finance executive with over 19 years of experience in international businesses, including automotive, manufacturing, mining, and retail. A Chartered Accountant with significant Western and Asian experience. Holds a Bachelor of Commerce from the University of Adelaide. Currently responsible for financial operations and strategic financial planning at Vmoto."
+      },
+      "martinZhou": {
+        "name": "Martin Zhou",
+        "title": "Non-Executive Director at Vmoto.",
+        "description": "Experienced motorcycle industry executive with over 36 years in roles at national and international companies in China and Japan. Instrumental in Honda Japan's strategic acquisition and cooperation with China's Sundiro Group, facilitating technical and product development agreements. Graduate of Shandong University, specializing in internal combustion engines, and holds an MBA from Yamaguchi University. Currently in the role of Non-Executive Director at Vmoto."
+      },
+      "blairSergeant": {
+        "name": "Blair Sergeant",
+        "title": "Non-Executive Director at Vmoto.",
+        "description": "Experienced public company executive with roles as managing director, finance director, and non-executive director across diverse industries. Chartered Secretary and Associate of the Australian Certified Practising Accountants. Holds a Bachelor of Business and Post Graduate Diploma in Corporate Administration from Curtin University. Currently in the role of Non-Executive Director at Vmoto."
+      },
+      "aaronKidd": {
+        "name": "Aaron Kidd",
+        "title": "Non-Executive Director at Vmoto.",
+        "description": "Over 15 years in M&A and capital markets at global banks and private equity, specializing in natural resources and energy transition. Started at Goldman Sachs, led Credit Suisse's Perth office, now heads Zephyr Capital in Perth. Holds Bachelor of Laws (Hons) and Bachelor of Commerce (Hons: Corporate and Investment Finance) from University of Western Australia, with honors and academic awards. Currently in the role of Non-Executive Director at Vmoto."
+      },
+      "grazianoMilone": {
+        "name": "Graziano Milone",
+        "title": "CMO & President of Strategic Business Development at Vmoto.",
+        "description": "Over 15 years in M&A and capital markets at global banks and private equity, specializing in natural resources and energy transition. Started at Goldman Sachs, led Credit Suisse's Perth office, now heads Zephyr Capital in Perth. Holds Bachelor of Laws (Hons) and Bachelor of Commerce (Hons: Corporate and Investment Finance) from University of Western Australia, with honors and academic awards. Currently in the role of Non-Executive Director at Vmoto."
+      }
+    }
+  },
+  "vmotoSmartConnectivity": {
+    "title": "READY FOR YOUR BUSINESS",
+    "description": "Sharing is easier with Vmoto: our scooters can be equipped, directly at the production stage, with wiring compatible to your sharing platform.",
+    "platformTitle": "VMOTO SMART PLATFORM",
+    "platformDescription": "The 4G APP prepares Vmoto scooters for integration with the third-party computing ecostystem. You can receive your fleet solely with integration-ready wiring or already complete with IOT, programmable to your needs.",
+    "canbusDescription": "The CAN-bus standard allows a real-time ad high transmission rate connection. Improved wiring layout enables stability of the electronic control system, promoting better ride management.",
+    "solutionsTitle": "VMOTO SHARING SOLUTIONS",
+    "solutionsDescription": "We offer a comprehensive and full solution for electric moped sharing business. Our vehicles need low maintenance: easy dis-assembling and assembling design, anti vandalism and theft-proof solutions, special ride sharing features.",
+    "apiDescription": "Vmoto APIs enable fleet vehicles to communicate easily with any IT ecosystem, thus simplifying connection with the third-party app and saving a net amount of time and money.",
+    "appTitle": "VMOTO APP",
+    "appDescription": "Our vehicles can also be equipped with our proprietary app, which enables connection between you, your vehicle and the cloud in a smart and convenient way."
+  },
+  "warranty": {
+    "title": "Warranty",
+    "subtitle": "Travel safe and secure",
+    "heading": "Vmoto Warranty Information",
+    "welcome": "Welcome to the Vmoto Warranty Information page. Here you will find all the details regarding the warranty coverage for your Vmoto electric scooter or motorcycle. Understanding your warranty ensures you can enjoy your vehicle with peace of mind, knowing that you are covered for any manufacturing defects and supported by our professional service network.",
+    "warrantorTitle": "Who is the warrantor?",
+    "warrantorIntro": "This warranty is provided by Vmoto Soco International, with headquarters located at:",
+    "warrantorLocations": {
+      "vmotoLimited": "Vmoto Limited: Level 48, 152-158 St Georges Terrace, Perth, Western Australia 6000, Australia",
+      "vmotoInternational": "Vmoto International: 15, Zhongxing East Road, Lishui Economic Development Zone, Lishui District, Nanjing 21 1200, Jiangsu Province, China",
+      "vmotoEurope": "Vmoto Europe: Boekweitstraat 95-97, 2153 GK Nieuw Vennep, The Netherlands",
+      "vmotoItaly": "Vmoto Italy: Viale Fratelli Casiraghi, 427, 20099 S. San Giovanni, Milan District, Italy"
+    },
+    "coverageTitle": "Who does this warranty cover?",
+    "coverageDescription": "This warranty covers the original purchasers and subsequent owners of Vmoto electric scooters and motorcycles that are imported and sold through authorized Vmoto dealers.",
+    "whatCoversTitle": "What does this warranty cover?",
+    "whatCoversDescription": "Vmoto warrants that each product is free from defects in material and workmanship during the warranty period. The warranty covers essential parts such as: battery, hub motor, frame, swing-arm, motor controller, wiring, shock absorbers, brake assemblies, wheels, throttle, fairings, any factory-installed accessories.",
+    "notCoveredTitle": "This warranty does not cover:",
+    "notCoveredItems": {
+      "unauthorized": "Products not supplied by Vmoto or unauthorized dealers",
+      "maintenance": "Routine maintenance, wear and tear, and cosmetic issues",
+      "misuse": "Damage caused by misuse, racing, or unauthorized modifications",
+      "altered": "Products with altered or removed identification numbers",
+      "incidental": "Incidental or consequential damages (e.g., loss of time, income)"
+    },
+    "durationTitle": "Duration of the warranty",
+    "durationIntro": "The warranty period starts from the date of delivery to the original purchaser:",
+    "durationItems": {
+      "general": "General parts: 2 years or 12,500 miles, whichever comes first",
+      "battery": "Battery: 3 years or 30,000 miles, whichever comes first"
+    },
+    "responsibilitiesTitle": "Owner responsibilities",
+    "responsibilitiesIntro": "Owners are responsible for:",
+    "responsibilitiesItems": {
+      "understanding": "Understanding and following the product manual and warranty terms",
+      "maintenance": "Performing recommended maintenance and servicing",
+      "laws": "Learning and obeying all relevant laws and safety practices"
+    },
+    "contactTitle": "Contact information",
+    "contactDescription": "For more information or to contact Vmoto, please visit this page or contact your nearest authorized dealer.",
+    "contactButton": "Contact Us"
+  },
+  "factory": {
+    "slides": {
+      "nextOpening": "Factory next opening",
+      "presentDay": "Factory present day"
+    },
+    "title": "OUR FACTORY: THE HEART OF ELECTRIC INNOVATION",
+    "description1": "Encompassing a sprawling 30,000 square meters in Nanjing, our state-of-the-art factory stands as the heart of innovation in electric motorcycles and mopeds. Here, precision meets passion, as advanced manufacturing technologies harmonize with a commitment to sustainability.",
+    "description2": "From the meticulous assembly lines to the bustling research labs, every corner echoes with the hum of progress and the dedication of our skilled workforce. It's more than a manufacturing facility; it's a beacon of excellence, driving forward our mission to redefine urban mobility with eco-friendly solutions.",
+    "description3": "At Vmoto, our mission is to lead the charge in sustainable transportation through cutting-edge technology, unmatched performance, and a relentless pursuit of innovation. We are dedicated to creating eco-friendly vehicles that not only meet but exceed the expectations of modern urban mobility, ensuring a cleaner, greener future for all."
+  },
+  "faq": {
+    "title": "FREQUENTLY ASKED QUESTIONS",
+    "subtitle": "UNLOCKING THE WORLD OF ELECTRIC SCOOTERS",
+    "welcome": "Welcome to our FAQ page! Here you'll find answers to some of the most common questions we get about our electric scooters, both for personal and business use. Whether you're looking for information on our products, our policies, or how to get started with electric scooters, we're here to help.",
+    "contactPrompt": "If you can't find the answer to your question here, please don't hesitate to contact us by visiting our 'Contact Us' page. We're always happy to help!",
+    "tabs": {
+      "products": "PRODUCTS",
+      "sustainability": "SUSTAINABILITY"
+    },
+    "questions": {
+      "products": {
+        "evChoice": {
+          "question": "Why choose an ev rather than an icev, while purchasing a new vehicle?",
+          "answer": "Electric vehicles offer numerous advantages including lower operating costs, zero direct emissions, quieter operation, and often better performance. They also benefit from government incentives and lower maintenance requirements."
+        },
+        "marketStatus": {
+          "question": "What is the current status of the global ev market in the world?",
+          "answer": "The global EV market is experiencing rapid growth, with increasing adoption rates worldwide. Many countries are setting ambitious targets for EV adoption and manufacturers are expanding their electric vehicle lineups."
+        }
+      },
+      "sustainability": {
+        "environmental": {
+          "question": "How do electric scooters contribute to environmental sustainability?",
+          "answer": "Electric scooters produce zero direct emissions, helping reduce air pollution and combat climate change. They also require less energy and resources to manufacture and maintain compared to traditional vehicles."
+        }
+      }
+    }
+  },
+  "customerSupport": {
+    "title": "CUSTOMER SUPPORT",
+    "heading": "CONNECT WITH OUR EXPERT SUPPORT",
+    "description": "For inquiries or further information about our cutting-edge products and services, please fill the form and contact directly our Customer Support, or use our listed contact details. We have a team of amazing humans who'd love to help you.",
+    "departments": {
+      "general": "General & Corporate department:",
+      "business": "Business Cooperation department:",
+      "marketing": "Marketing department:",
+      "afterSales": "After Sales Service department:"
+    }
+  },
+  "productFeatures": {
+    "features": [
+      {
+        "title": "Smart display",
+        "description": "With display protector from antivandalism"
+      },
+      {
+        "title": "QR code position and protector",
+        "description": "You know the location of the vehicle at any time"
+      },
+      {
+        "title": "Mobile Phone Carrier",
+        "description": "Facilitates driving even for the user who is not familiar with the roadways"
+      },
+      {
+        "title": "5 minutes maintenance",
+        "description": "Patented single screw battery change for easy maintenance"
+      },
+      {
+        "title": "Easy Repair",
+        "description": "The fairings can be easily removed to reach the electronic components"
+      },
+      {
+        "title": "Latest CATL NCM lithium battery",
+        "description": "Adaptable to different models and with longer cycle of 1500"
+      },
+      {
+        "title": "Special designed covers",
+        "description": "Protect all the cables from vandalism"
+      },
+      {
+        "title": "Special exposed frame",
+        "description": "Better protection of the vehicle body from fallen and breakage"
+      }
+    ]
+  },
+  "urbanForm": {
+    "fullName": {
+      "label": "Please enter your full name.",
+      "firstName": "NAME",
+      "lastName": "LAST NAME"
+    },
+    "country": {
+      "label": "COUNTRY",
+      "placeholder": "Select an option"
+    },
+    "email": {
+      "label": "EMAIL ADDRESS",
+      "description": "Please enter your email so we can get in touch.",
+      "placeholder": "e.g. psherman@wallaby.com"
+    },
+    "message": {
+      "label": "MESSAGE",
+      "description": "Please enter your comments.",
+      "placeholder": "e.g. The reason for my enquiry is..."
+    },
+    "captcha": {
+      "label": "I am human",
+      "privacyTerms": "Privacy - Terms"
+    },
+    "submit": {
+      "sending": "SENDING...",
+      "default": "CONTACT US"
+    },
+    "validation": {
+      "required": {
+        "firstName": "First name is required",
+        "lastName": "Last name is required",
+        "country": "Country cannot be blank",
+        "email": "Email is required",
+        "message": "Message is required"
+      },
+      "invalid": {
+        "email": "Email is invalid"
+      }
+    }
+  },
+  "portal": {
+    "loginTitle": "Log in to the portal of Vmoto Italy",
+    "username": "Username",
+    "password": "Password",
+    "required": "*",
+    "loginButton": "Log in",
+    "forgotPassword": "Forgot your password?",
+    "rmiTitle": "RMI Service for Independent Operators",
+    "ioRegistration": "IO Registration",
+    "ioEmployeeRegistration": "IO's Employee registration"
+  },
+  "laadmogelijkheden": {
+    "title": "APPLICABLE VEHICLE PLATFORMS"
+  },
+  "handleidingen": {
+    "title": "Warranty"
   }
 }
