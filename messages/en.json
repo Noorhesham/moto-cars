@@ -8,13 +8,39 @@
     "signIn": "Sign In"
   },
   "dashboard": {
+    "sidebar": {
+      "management": "Management",
+      "home": "Home",
+      "products": "Products",
+      "createProduct": "Create Product",
+      "blogs": "Blogs",
+      "createBlog": "Create Blog",
+      "users": "Users",
+      "business": "Business",
+      "adminDashboard": "Admin Dashboard",
+      "logout": "Log out"
+    },
     "pageTitle": "Dashboard | VMoto Admin",
     "pageDescription": "VMoto admin dashboard overview",
     "title": "Dashboard",
     "overview": "Here's an overview of your store's performance",
     "products": "Products",
     "totalProducts": "Total products in your store",
-    "blogs": "Blogs",
+    "blogs": {
+      "title": "Blogs",
+      "addBlog": "Add Blog",
+      "columns": {
+        "title": "Title",
+        "content": "Content",
+        "status": "Status",
+        "actions": "Actions"
+      },
+      "actions": {
+        "view": "View",
+        "edit": "Edit",
+        "delete": "Delete"
+      }
+    },
     "totalBlogs": "Total blog posts published",
     "users": "Users",
     "totalUsers": "Total registered users",
@@ -38,7 +64,86 @@
     "userRegistered": "{name} registered",
     "view": "View",
     "colors": "Colors",
-    "features": "Features"
+    "features": "Features",
+    "business": {
+      "title": "Business",
+      "columns": {
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone",
+        "address": "Address",
+        "type": "Type",
+        "status": "Status",
+        "actions": "Actions"
+      },
+      "actions": {
+        "view": "View",
+        "edit": "Edit",
+        "delete": "Delete"
+      }
+    },
+    "products": {
+      "title": "Products",
+      "add": " add product",
+
+      "columns": {
+        "image": "Image",
+        "name": "Name",
+        "category": "Category",
+        "price": "Price",
+        "stock": "Stock",
+        "status": "Status",
+        "actions": "Actions"
+      },
+      "actions": {
+        "view": "View",
+        "edit": "Edit",
+        "delete": "Delete"
+      }
+    },
+    "users": {
+      "title": "Users",
+      "addusers": "add user",
+
+      "columns": {
+        "name": "Name",
+        "email": "Email",
+        "role": "Role",
+        "status": "Status",
+        "actions": "Actions"
+      },
+      "actions": {
+        "view": "View",
+        "edit": "Edit",
+        "delete": "Delete"
+      },
+      "form": {
+        "title": "User Details",
+        "name": "Name",
+        "email": "Email",
+        "role": "Role",
+        "password": "Password",
+        "confirmPassword": "Confirm Password",
+        "save": "Save",
+        "cancel": "Cancel"
+      }
+    },
+    "sidebar": {
+      "management": "Management",
+      "home": "Home",
+      "products": "Products",
+      "createProduct": "Create Product",
+      "blogs": "Blogs",
+      "createBlog": "Create Blog",
+      "users": "Users",
+      "business": "Business",
+      "adminDashboard": "Admin Dashboard",
+      "logout": "Log out"
+    },
+    "time": {
+      "hoursAgo": "hours ago",
+      "daysAgo": "days ago"
+    }
   },
   "home": {
     "news": {

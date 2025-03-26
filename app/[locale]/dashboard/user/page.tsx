@@ -8,10 +8,11 @@ import { userColumns } from "./columns";
 import User from "@/app/models/User";
 import ModelCustom from "@/app/components/ModelCustom";
 import { UserForm } from "./UserForm";
+import { getTranslations } from "next-intl/server";
 
 const Page = async ({ searchParams }: { searchParams: { page?: string } }) => {
   await connect();
-
+  const t = await getTranslations("dashboard.users");
   const currentPage = parseInt(searchParams.page || "1", 10);
   const limit = 10;
 
@@ -26,7 +27,11 @@ const Page = async ({ searchParams }: { searchParams: { page?: string } }) => {
   return (
     <MaxWidthWrapper className="flex px-4 flex-col mt-5">
       <div className="flex items-center gap-2">
-        <ModelCustom content={<UserForm />} btn={<Button className="self-end">Add User</Button>} title="Add User" />
+        <ModelCustom
+          content={<UserForm />}
+          btn={<Button className="self-end">{t("addusers")}</Button>}
+          title={t("addusers")}
+        />
       </div>
       <DataTable columns={userColumns} data={dataObj} entity="User" page={currentPage} totalPages={totalPages} />
     </MaxWidthWrapper>

@@ -10,19 +10,31 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { createEntity } from "@/app/actions/actions";
 import { toast } from "react-toastify";
 import bcrypt from "bcryptjs";
+import { useTranslations } from "next-intl";
 
-export function UserForm({ initialData }: { initialData?: UserFormValues }) {
+const formSchema = userSchema.omit({
+  role: true,
+  password: true,
+  confirmPassword: true,
+});
+
+interface UserFormProps {
+  initialData?: UserFormValues;
+  onSubmit: (data: UserFormValues) => void;
+}
+
+export function UserForm({ initialData, onSubmit }: UserFormProps) {
+  const t = useTranslations("dashboard.users.form");
+
   const form = useForm<UserFormValues>({
-    resolver: zodResolver(userSchema),
+    resolver: zodResolver(formSchema),
     defaultValues: initialData || {
       name: "",
       email: "",
-      password: "",
-      role: "user",
     },
   });
 
-  const onSubmit = async (data: UserFormValues) => {
+  const onSubmitHandler = async (data: UserFormValues) => {
     try {
       // Hash the password before sending it to the backend
       const hashedPassword = await bcrypt.hash(data.password, 10);
@@ -39,15 +51,15 @@ export function UserForm({ initialData }: { initialData?: UserFormValues }) {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmitHandler)} className="space-y-8">
         <FormField
           control={form.control}
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name</FormLabel>
+              <FormLabel>{t("name")}</FormLabel>
               <FormControl>
-                <Input placeholder="Enter name" {...field} />
+                <Input placeholder={t("name")} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -58,22 +70,9 @@ export function UserForm({ initialData }: { initialData?: UserFormValues }) {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel>{t("email")}</FormLabel>
               <FormControl>
-                <Input placeholder="Enter email" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="password"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Password</FormLabel>
-              <FormControl>
-                <Input type="password" placeholder="Enter password" {...field} />
+                <Input placeholder={t("email")} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -84,23 +83,46 @@ export function UserForm({ initialData }: { initialData?: UserFormValues }) {
           name="role"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Role</FormLabel>
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
-                <FormControl>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select role" />
-                  </SelectTrigger>
-                </FormControl>
-                <SelectContent>
-                  <SelectItem value="admin">Admin</SelectItem>
-                  <SelectItem value="user">User</SelectItem>
-                </SelectContent>
-              </Select>
+              <FormLabel>{t("role")}</FormLabel>
+              <FormControl>
+                <Input placeholder={t("role")} {...field} />
+              </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button type="submit">Save User</Button>
+        <FormField
+          control={form.control}
+          name="password"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>{t("password")}</FormLabel>
+              <FormControl>
+                <Input type="password" placeholder={t("password")} {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="confirmPassword"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>{t("confirmPassword")}</FormLabel>
+              <FormControl>
+                <Input type="password" placeholder={t("confirmPassword")} {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <div className="flex justify-end space-x-4">
+          <Button type="button" variant="outline" onClick={() => form.reset()}>
+            {t("cancel")}
+          </Button>
+          <Button type="submit">{t("save")}</Button>
+        </div>
       </form>
     </Form>
   );

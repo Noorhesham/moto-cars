@@ -8,33 +8,47 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { MoreHorizontal } from "lucide-react";
+import Link from "next/link";
 import { IUser } from "@/app/types";
 import ModelCustom from "@/app/components/ModelCustom";
 import DeleteSingle from "@/app/components/DeleteSingle";
 import { UserForm } from "./UserForm";
+import { useTranslations } from "next-intl";
 
 export const userColumns: ColumnDef<IUser>[] = [
   {
     accessorKey: "name",
-    header: "Name",
+    header: ({ column }) => {
+      const t = useTranslations("dashboard.users.columns");
+      return t("name");
+    },
   },
   {
     accessorKey: "email",
-    header: "Email",
+    header: ({ column }) => {
+      const t = useTranslations("dashboard.users.columns");
+      return t("email");
+    },
   },
   {
     accessorKey: "role",
-    header: "Role",
+    header: ({ column }) => {
+      const t = useTranslations("dashboard.users.columns");
+      return t("role");
+    },
   },
   {
-    accessorKey: "createdAt",
-    header: "Created At",
-    cell: ({ row }) => new Date(row.original.createdAt).toLocaleDateString(),
+    accessorKey: "status",
+    header: ({ column }) => {
+      const t = useTranslations("dashboard.users.columns");
+      return t("status");
+    },
   },
   {
     id: "actions",
     cell: ({ row }) => {
       const user = row.original;
+      const t = useTranslations("dashboard.users.actions");
 
       return (
         <DropdownMenu>
@@ -45,8 +59,11 @@ export const userColumns: ColumnDef<IUser>[] = [
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
+            <DropdownMenuItem asChild>
+              <Link href={`/users/${user.id}`}>{t("view")}</Link>
+            </DropdownMenuItem>
             <ModelCustom
-              btn={<Button className="w-full">Edit</Button>}
+              btn={<Button className="w-full">{t("edit")}</Button>}
               title="Edit User"
               content={<UserForm initialData={user} />}
             />

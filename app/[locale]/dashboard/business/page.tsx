@@ -1,16 +1,15 @@
-import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
-import connect from "@/app/utils/clientPromise";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { DataTable } from "@/app/components/DataTable";
-import Business from "@/app/models/Business";
+import { Button } from "@/components/ui/button";
 import ModelCustom from "@/app/components/ModelCustom";
+import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import Business from "@/app/models/Business";
 import { BusinessCaseForm } from "./create/BusinessForm";
 import { businessCaseColumns } from "./columns";
+import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
 
-const Page = async ({ searchParams }: { searchParams: { page?: string } }) => {
-  await connect();
-
+export default async function BusinessPage({ searchParams }) {
+  const t = await getTranslations("dashboard.business");
   const currentPage = parseInt(searchParams.page || "1", 10);
   const limit = 10;
 
@@ -23,23 +22,12 @@ const Page = async ({ searchParams }: { searchParams: { page?: string } }) => {
   const totalPages = Math.ceil(totalCount / limit);
   console.log(data);
   return (
-    <MaxWidthWrapper className="flex px-4 flex-col mt-5">
-      <div className="flex items-center gap-2">
-        <ModelCustom
-          btn={<Button className="self-end">Add Bussiness case</Button>}
-          title="Add Bussiness case"
-          content={<BusinessCaseForm />}
-        />
+    <MaxWidthWrapper className="container mx-auto py-10">
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-3xl font-bold">{t("title")}</h1>
+        <ModelCustom btn={<Button>Add Business</Button>} title="Add Business" content={<BusinessCaseForm />} />
       </div>
-      <DataTable
-        entity="Business"
-        columns={businessCaseColumns}
-        data={dataObj}
-        page={currentPage}
-        totalPages={totalPages}
-      />
+      <DataTable columns={businessCaseColumns} data={dataObj} page={currentPage} totalPages={totalPages} />
     </MaxWidthWrapper>
   );
-};
-
-export default Page;
+}

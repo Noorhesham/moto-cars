@@ -29,46 +29,47 @@ import { redirect, usePathname } from "next/navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { signOut, useSession } from "next-auth/react";
+import { useTranslations } from "next-intl";
 
 const data = {
   versions: ["1.0.1", "1.1.0-alpha", "2.0.0-beta1"],
   navMain: [
     {
-      title: "Management",
+      title: "management",
       url: "/dashboard",
       items: [
         {
-          title: "Home",
+          title: "home",
           url: "/dashboard",
           icon: Home,
         },
         {
-          title: "Products",
+          title: "products",
           url: "/dashboard/products",
           icon: Package,
         },
         {
-          title: "Create Product",
+          title: "createProduct",
           url: "/dashboard/products/create",
           icon: PlusCircle,
         },
         {
-          title: "Blogs",
+          title: "blogs",
           url: "/dashboard/blogs",
           icon: FileText,
         },
         {
-          title: "Create Blog",
+          title: "createBlog",
           url: "/dashboard/blogs/create",
           icon: FilePlus,
         },
         {
-          title: "Users",
+          title: "users",
           url: "/dashboard/user",
           icon: Users,
         },
         {
-          title: "Business",
+          title: "business",
           url: "/dashboard/business",
           icon: BriefcaseBusinessIcon,
         },
@@ -80,6 +81,8 @@ const data = {
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const pathname = usePathname();
   const session = useSession();
+  const t = useTranslations("dashboard.sidebar");
+
   return (
     <Sidebar {...props}>
       <SidebarHeader className="pb-4">
@@ -91,7 +94,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   <LayoutDashboard className="size-4" />
                 </div>
                 <div className="flex flex-col gap-0.5 leading-none">
-                  <span className="font-semibold">Admin Dashboard</span>
+                  <span className="font-semibold">{t("adminDashboard")}</span>
                 </div>
               </a>
             </SidebarMenuButton>
@@ -103,7 +106,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         {data.navMain.map((item) => (
           <SidebarGroup key={item.title}>
             <SidebarGroupLabel className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-              {item.title}
+              {t(item.title)}
             </SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
@@ -116,7 +119,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                     >
                       <a href={item.url}>
                         {item.icon && <item.icon className="size-4" />}
-                        <span>{item.title}</span>
+                        <span>{t(item.title)}</span>
                       </a>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
@@ -155,7 +158,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 className="w-full justify-start text-destructive hover:text-destructive"
               >
                 <LogOut className="mr-2 size-4" />
-                <span>Log out</span>
+                <span>{t("logout")}</span>
               </Button>
             </SidebarMenuButton>
           </SidebarMenuItem>

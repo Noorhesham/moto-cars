@@ -64,9 +64,12 @@ function ActivityItem({ activity, t, locale }) {
   };
 
   const getTimeAgo = () => {
-    return formatDistanceToNow(new Date(activity.createdAt), {
+    const timeAgo = formatDistanceToNow(new Date(activity.createdAt), {
       addSuffix: true,
     });
+
+    // Replace "hours ago" and "days ago" with translations
+    return timeAgo.replace("hours ago", t("time.hoursAgo")).replace("days ago", t("time.daysAgo"));
   };
 
   return (
@@ -135,7 +138,7 @@ export default async function DashboardPage({ params: { locale } }) {
       {/* Stats Cards */}
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <StatsCard
-          title={t("products")}
+          title={t("productss")}
           value={stats.productsCount}
           icon={<ShoppingBag className="h-5 w-5" />}
           description={t("totalProducts")}
@@ -153,7 +156,7 @@ export default async function DashboardPage({ params: { locale } }) {
         />
 
         <StatsCard
-          title={t("users")}
+          title={t("userss")}
           value={stats.usersCount}
           icon={<Users className="h-5 w-5" />}
           description={t("totalUsers")}

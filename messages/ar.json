@@ -8,15 +8,27 @@
     "signIn": "تسجيل الدخول"
   },
   "dashboard": {
+    "sidebar": {
+      "management": "الإدارة",
+      "home": "الرئيسية",
+      "products": "المنتجات",
+      "createProduct": "إضافة منتج",
+      "blogs": "المدونات",
+      "createBlog": "إضافة مدونة",
+      "users": "المستخدمين",
+      "business": "الأعمال",
+      "adminDashboard": "لوحة تحكم المشرف",
+      "logout": "تسجيل الخروج"
+    },
     "pageTitle": "لوحة التحكم | VMoto",
+    "userss": "المستخدمين",
     "pageDescription": "نظرة عامة على لوحة تحكم VMoto",
     "title": "لوحة التحكم",
     "overview": "إليك نظرة عامة على أداء متجرك",
-    "products": "المنتجات",
+    "productss": "المنتجات",
     "totalProducts": "إجمالي المنتجات في متجرك",
     "blogs": "المدونات",
     "totalBlogs": "إجمالي منشورات المدونة المنشورة",
-    "users": "المستخدمين",
     "totalUsers": "إجمالي المستخدمين المسجلين",
     "features": "الميزات",
     "totalFeatures": "إجمالي ميزات المنتج",
@@ -38,7 +50,71 @@
     "userRegistered": "تم تسجيل {name}",
     "view": "عرض",
     "colors": "الألوان",
-    "features": "الميزات"
+    "business": {
+      "title": "الأعمال",
+      "columns": {
+        "name": "الاسم",
+        "email": "البريد الإلكتروني",
+        "phone": "الهاتف",
+        "address": "العنوان",
+        "type": "النوع",
+        "status": "الحالة",
+        "actions": "الإجراءات"
+      },
+      "actions": {
+        "view": "عرض",
+        "edit": "تعديل",
+        "delete": "حذف"
+      }
+    },
+    "products": {
+      "title": "المنتجات",
+      "add":"اضافه منتج",
+      "columns": {
+        "image": "الصورة",
+        "name": "الاسم",
+        "category": "الفئة",
+        "price": "السعر",
+        "stock": "المخزون",
+        "status": "الحالة",
+        "actions": "الإجراءات"
+      },
+      "actions": {
+        "view": "عرض",
+        "edit": "تعديل",
+        "delete": "حذف"
+      }
+    },
+    "users": {
+      "title": "المستخدمين",
+      "addusers":"اضافه مستخدم",
+      "columns": {
+        "name": "الاسم",
+        "email": "البريد الإلكتروني",
+        "role": "الدور",
+        "status": "الحالة",
+        "actions": "الإجراءات"
+      },
+      "actions": {
+        "view": "عرض",
+        "edit": "تعديل",
+        "delete": "حذف"
+      },
+      "form": {
+        "title": "تفاصيل المستخدم",
+        "name": "الاسم",
+        "email": "البريد الإلكتروني",
+        "role": "الدور",
+        "password": "كلمة المرور",
+        "confirmPassword": "تأكيد كلمة المرور",
+        "save": "حفظ",
+        "cancel": "إلغاء"
+      }
+    },
+    "time": {
+      "hoursAgo": "ساعات مضت",
+      "daysAgo": "أيام مضت"
+    }
   },
   "home": {
     "news": {

@@ -5,11 +5,13 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { productColumns } from "./columns";
 import { DataTable } from "@/app/components/DataTable";
+import { getTranslations } from "next-intl/server";
 
 export const dynamic = "force-dynamic";
 
 const Page = async ({ searchParams }: { searchParams: { page?: string } }) => {
   await connect();
+  const t = await getTranslations("");
 
   const currentPage = parseInt(searchParams.page || "1", 10);
   const limit = 10;
@@ -24,12 +26,10 @@ const Page = async ({ searchParams }: { searchParams: { page?: string } }) => {
   console.log(data);
   return (
     <MaxWidthWrapper className="flex w-full px-4 gap-3 flex-col mt-5">
-      <h1 className="text-4xl font-semibold"> Products</h1>
+      <h1 className="text-4xl font-semibold"> {t("dashboard.products.title")}</h1>
       <div className="flex items-center gap-2">
         <Button className="self-end">
-          <Link href="/dashboard/products/create" as="/en/dashboard/products/create">
-            Add Product
-          </Link>
+          <Link href="/dashboard/products/create">{t("dashboard.products.add")}</Link>
         </Button>
       </div>
       <DataTable columns={productColumns} data={dataObj} entity="Product" page={currentPage} totalPages={totalPages} />
