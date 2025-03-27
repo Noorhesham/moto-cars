@@ -20,7 +20,7 @@ export const productColumns: ColumnDef<IProduct>[] = [
     accessorKey: "starter.backgroundImage",
     header: "الصورة الرئيسية",
     cell: ({ row }) => {
-      const backgroundImage = row.original.starter.backgroundImage;
+      const backgroundImage = row.original.modelImage || row.original.starter.backgroundImage;
       return (
         <div className="w-20 h-20 relative">
           <Image src={backgroundImage} alt="Background Image" fill className="object-cover rounded" />

@@ -3,7 +3,7 @@ import * as z from "zod";
 export const productSchema = z.object({
   slug: z.string().min(1, "Slug is required"),
   category: z.string().min(1, "Category is required"),
-
+  modelImage: z.string(),
   starter: z.object({
     name: z.object({
       en: z.string().min(1, "English name is required"),

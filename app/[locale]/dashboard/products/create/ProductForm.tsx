@@ -22,6 +22,7 @@ export function ProductForm({ initialData }: ProductFormProps) {
   const form = useForm<ProductFormValues>({
     resolver: zodResolver(productSchema),
     defaultValues: initialData || {
+      modelImage: "",
       starter: {
         name: { en: "", ar: "" },
         title: { en: "", ar: "" },
@@ -102,7 +103,8 @@ export function ProductForm({ initialData }: ProductFormProps) {
     <FormProvider {...form}>
       <form onSubmit={handleSubmit(onSubmit)} className="w-full mx-auto">
         <MaxWidthWrapper>
-          <h1 className="text-4xl font-bold mb-4">{initialData ? t("edit") : t("create")}</h1>
+          <h1 className="text-4xl font-bold mb-4">{initialData ? t("edit") : t("create")}</h1>{" "}
+          <FormInput single name={`modelImage`} label={t("imageUrl")} placeholder={t("imageUrl")} photo />
           <FormInput name="slug" label={t("slug")} placeholder={t("slug")} />
           <FormSelect
             name="category"

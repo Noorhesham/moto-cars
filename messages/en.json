@@ -151,7 +151,8 @@
         "save": "Save Product",
         "slug": "Slug",
         "category": "Category",
-        "chooseCategory": "Choose Category"
+        "chooseCategory": "Choose Category",
+        "success": "Product created successfully"
       },
       "columns": {
         "image": "Image",
@@ -355,12 +356,15 @@
   },
   "modelRange": {
     "title": "MODEL RANGE",
+    "description": "Discover our complete range of electric vehicles",
     "categories": {
-      "eMoto": "E-MOTO",
-      "eScooter": "E-SCOOTER",
-      "eFleet": "E-FLEET",
-      "chargingSystems": "CHARGING SYSTEMS"
-    }
+      "emoto": "E-MOTO",
+      "escooter": "E-SCOOTER",
+      "efleet": "E-FLEET",
+      "chargingsystems": "CHARGING SYSTEMS"
+    },
+    "viewDetails": "View Details",
+    "noProducts": "No products available in this category"
   },
   "sectionBookTest": {
     "title": "Global leader in electric mobility solutions",
@@ -391,17 +395,16 @@
     },
     "links": {
       "vehicles": "Vehicles",
-      "fullRangeVehicles": "Full-range Vehicles",
+      "fullrangevehicles": "Full-range Vehicles",
       "company": "Company",
-      "storeLocator": "Store Locator",
-      "becomeDealer": "Become a dealer",
-      "investorCentre": "Investor Centre",
+      "storelocator": "Store Locator",
+      "becomeadealer": "Become a dealer",
+      "investorcentre": "Investor Centre",
       "services": "Services",
       "manuals": "Manuals",
       "warranty": "Warranty",
       "rmi": "RMI",
-      "contentPortal": "Content Portal",
-      "full-rangevehicles": ""
+      "contentportal": "Content Portal"
     },
     "bottomBar": {
       "copyright": "© 2025 Vmoto Limited - All rights reserved",

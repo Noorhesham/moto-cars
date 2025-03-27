@@ -44,7 +44,7 @@ const HeroBanner = ({
       >
         <div className={`px-4 flex flex-col gap-5 sm:px-6 w-full ${isRTL ? "items-end" : "items-start"}`}>
           <div className="w-full max-w-screen-xl mx-auto">
-            <div className={`w-full max-w-3xl ${isRTL ? "ml-auto" : "ml-auto"}`}>
+            <div className={`w-full max-w-3xl ${isRTL ? "ml-auto" : "mr-auto"}`}>
               <div className={`text-white ${isRTL ? "text-right" : "text-left"}`}>
                 <h1 className="text-3xl md:text-5xl text-start font-bold uppercase">{title || "Book a Test Ride"}</h1>
                 <p className="text-xl font-thin mt-2">{title2}</p>

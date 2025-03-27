@@ -15,17 +15,17 @@ const socialLinks = [
 ];
 
 const footerLinks = {
-  Vehicles: [{ name: "Full-range Vehicles", href: "/models" }],
+  Vehicles: [{ name: "fullrangevehicles", href: "/models" }],
   Company: [
-    { name: "Store Locator", href: "/store-locator" },
-    { name: "Become a dealer", href: "/become-a-dealer" },
-    { name: "Investor Centre", href: "/investor-centre" },
+    { name: "storelocator", href: "/store-locator" },
+    { name: "becomeadealer", href: "/become-a-dealer" },
+    { name: "investorcentre", href: "/investor-centre" },
   ],
   Services: [
-    { name: "Manuals", href: "/manuels-dutilisation" },
-    { name: "Warranty", href: "/garanties" },
-    { name: "RMI", href: "/service" },
-    { name: "Content Portal", href: "/content-portal" },
+    { name: "manuals", href: "/manuels-dutilisation" },
+    { name: "warranty", href: "/garanties" },
+    { name: "rmi", href: "/service" },
+    { name: "contentportal", href: "/content-portal" },
   ],
 };
 
@@ -104,7 +104,7 @@ export function Footer() {
                             target={link.href.startsWith("https://swan-vmoto") ? "_blank" : ""}
                             className="text-sm text-gray-400 hover:text-white transition-colors"
                           >
-                            {t(`links.${link.name.toLowerCase().replace(/\s+/g, "")}`)}
+                            {t(`links.${link.name}`)}
                           </Link>
                         ))}
                       </div>

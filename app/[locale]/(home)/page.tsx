@@ -4,14 +4,15 @@ import { ModelRange } from "@/app/components/ModalCustom";
 import { NewsSlider } from "@/app/components/news-swiper";
 import SectionBookTest from "@/app/components/SectionBookTest";
 import VmotoApp from "@/app/components/VmotoApp";
-import Image from "next/image";
 import { getTranslations } from "next-intl/server";
-import { getEntities } from "@/app/actions/actions";
-// import Product from "@/app/models/Product";
+import Product from "@/app/models/Product";
+import connect from "@/app/utils/clientPromise";
 
 export default async function Home() {
   const t = await getTranslations("home");
-
+  await connect();
+  const products = await Product.find({}).select("_id category modelImage starter slug").lean();
+  const productsObj = JSON.parse(JSON.stringify(products));
   const news = [
     {
       title: t("news.eicma2024.title"),
@@ -93,12 +94,11 @@ export default async function Home() {
       image: "/ss2.webp",
     },
   ];
-  // const products = await Product.find({}).select("color starter category");
-  // console.log(products);
+
   return (
     <main className="">
       <HeroSlider />
-      <ModelRange />
+      <ModelRange products={productsObj} />
       <BrandAmbassadors ambassadors={ambassadors} />
       <SectionBookTest />
       <VmotoApp />

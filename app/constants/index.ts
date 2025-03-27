@@ -78,3 +78,4 @@ export const discover = [
     description: "Our commitment to a sustainable future.",
   },
 ];
+export const CATEGORIESVEHICLES = ["E-MOTO", "E-SCOOTER", "E-FLEET", "Charging Systems"];
