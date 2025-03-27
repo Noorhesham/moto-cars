@@ -361,7 +361,8 @@
       "emoto": "E-MOTO",
       "escooter": "E-SCOOTER",
       "efleet": "E-FLEET",
-      "chargingsystems": "CHARGING SYSTEMS"
+      "charging systems": "CHARGING SYSTEMS",
+      "chooseCategory": "Choose Category"
     },
     "viewDetails": "View Details",
     "noProducts": "No products available in this category"
@@ -663,5 +664,16 @@
   },
   "handleidingen": {
     "title": "Warranty"
+  },
+  "dealer": {
+    "hero": {
+      "title": "Become a dealer"
+    },
+    "joinUs": "Join Us",
+    "networkTitle": "A network, a way to live",
+    "networkDescription": "65 countries, over 100,000 customers enjoying the ride and support of our ever-expanding dealer network: become part of the change.",
+    "businessOpportunity": "With Vmoto, you will have the opportunity to live an exciting personal and professional experience, joining a business with great potential and the prospect of making a real difference.",
+    "promise": "Ours is a promise to the more than 1,500 dealers worldwide and more than 100,000 consumers who have already chosen us. Vmoto is constantly working to make a difference in urban commuting.",
+    "joinRevolution": "Join the Urban Electric Revolution"
   }
 }

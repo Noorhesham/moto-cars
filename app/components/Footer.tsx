@@ -18,14 +18,12 @@ const footerLinks = {
   Vehicles: [{ name: "fullrangevehicles", href: "/models" }],
   Company: [
     { name: "storelocator", href: "/store-locator" },
-    { name: "becomeadealer", href: "/become-a-dealer" },
-    { name: "investorcentre", href: "/investor-centre" },
+    { name: "becomeadealer", href: "/dealer-worden" },
   ],
   Services: [
-    { name: "manuals", href: "/manuels-dutilisation" },
+    { name: "manuals", href: "/handleidingen" },
     { name: "warranty", href: "/garanties" },
     { name: "rmi", href: "/service" },
-    { name: "contentportal", href: "/content-portal" },
   ],
 };
 
@@ -127,11 +125,11 @@ export function Footer() {
             <div className="mt-8 flex flex-wrap gap-3 items-center justify-between border-t border-gray-800 pt-8 text-sm text-gray-400">
               <p>{t("bottomBar.copyright")}</p>
               <div className="flex gap-4">
-                <Link href="#" className="hover:text-white">
+                <Link href="/cookies-policy" className="hover:text-white">
                   {t("bottomBar.cookiePolicy")}
                 </Link>
                 <span>•</span>
-                <Link href="#" className="hover:text-white">
+                <Link href="/privacy-policy" className="hover:text-white">
                   {t("bottomBar.privacyPolicy")}
                 </Link>
               </div>

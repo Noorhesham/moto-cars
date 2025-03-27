@@ -21,6 +21,7 @@ type Product = {
   _id: string;
   category: string;
   modelImage: string;
+  slug: string;
   starter: {
     name: {
       en: string;
@@ -36,9 +37,8 @@ interface ModelRangeProps {
 
 export function ModelRange({ products }: ModelRangeProps) {
   const t = useTranslations("modelRange");
-  const [activeCategory, setActiveCategory] = React.useState<string | null>(null);
-  const swiperRef = React.useRef<SwiperType>();
   const locale = useLocale();
+  const swiperRef = React.useRef<SwiperType>();
 
   // Group products by category
   const productsByCategory = React.useMemo(() => {
@@ -54,22 +54,10 @@ export function ModelRange({ products }: ModelRangeProps) {
     return grouped;
   }, [products]);
 
-  // Set initial active category
-  React.useEffect(() => {
-    if (products.length > 0 && !activeCategory) {
-      const categories = Object.keys(productsByCategory);
-      if (categories.length > 0) {
-        setActiveCategory(categories[0]);
-      }
-    }
-  }, [products, activeCategory, productsByCategory]);
-
-  const categories = [
-    t("categories.eMoto"),
-    t("categories.eScooter"),
-    t("categories.eFleet"),
-    t("categories.chargingSystems"),
-  ];
+  const [activeCategory, setActiveCategory] = React.useState<string>(() => {
+    const categories = Object.keys(productsByCategory);
+    return categories.length > 0 ? categories[0] : "";
+  });
 
   return (
     <section className="relative py-16">
@@ -82,12 +70,12 @@ export function ModelRange({ products }: ModelRangeProps) {
           <div className="md:hidden w-[200px]">
             <Select value={activeCategory} onValueChange={setActiveCategory}>
               <SelectTrigger className="w-full bg-transparent border-gray-200">
-                <SelectValue placeholder="Select category" />
+                <SelectValue placeholder={t("categories.chooseCategory")} />
               </SelectTrigger>
               <SelectContent>
                 {Object.keys(productsByCategory).map((category) => (
                   <SelectItem key={category} value={category}>
-                    <span className="font-semibold">{category}</span>
+                    <span className="font-semibold">{t(`categories.${category.toLowerCase().replace("-", "")}`)}</span>
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -107,7 +95,9 @@ export function ModelRange({ products }: ModelRangeProps) {
                   activeCategory === category && "before:bg-cyan-200 hover:before:bg-cyan-300"
                 )}
               >
-                <span className="relative font-semibold z-10">{category}</span>
+                <span className="relative font-semibold z-10">
+                  {t(`categories.${category.toLowerCase().replace("-", "")}`)}
+                </span>
               </button>
             ))}
           </div>
@@ -133,12 +123,8 @@ export function ModelRange({ products }: ModelRangeProps) {
         </div>
       </MaxWidthWrapper>
 
-      <div
-        className={` 
-          // productsByCategory[activeCategory]?.length > 3 ? "lg:ml-[10.5rem]" : "ml-0"
-        relative  flex flex-col overflow-hidden items-end`}
-      >
-        <div className="relative max-w-full lg:mr-[-9rem] overflow-hidden">
+      <div className="relative flex lg:ml-[11.6rem] flex-col overflow-hidden items-end">
+        <div className="relative max-w-full  overflow-hidden">
           <Swiper
             modules={[Navigation, Autoplay]}
             onBeforeInit={(swiper) => {
@@ -167,19 +153,19 @@ export function ModelRange({ products }: ModelRangeProps) {
             {productsByCategory[activeCategory]?.map((product) => (
               <SwiperSlide key={product.slug}>
                 <div className="group flex flex-col items-center relative">
-                  <Link  href={`/product/${product.slug}`} className="w-full relative aspect-[3/2] lg:h-56 lg:aspect-square overflow-hidden">
+                  <Link
+                    href={`/product/${product.slug}`}
+                    className="w-full relative aspect-[3/2] lg:h-56 lg:aspect-square overflow-hidden"
+                  >
                     <Image
                       fill
                       src={product.modelImage || "/placeholder.svg"}
-                      alt={product.starter.name[locale]}
+                      alt={product.starter.name[locale as keyof typeof product.starter.name]}
                       className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
                     />
                   </Link>
-                  <h3
-                    className="mt-4 relative group-hover:before:bg-cyan-200 before:bottom-0 before:h-[3px] before:absolute
-                    before:w-full w-fit duration-200 text-center before:duration-200 text-center font-mono tracking-[0.2em]"
-                  >
-                    {product.starter.name[locale]}
+                  <h3 className="mt-4 relative group-hover:before:bg-cyan-200 before:bottom-0 before:h-[3px] before:absolute before:w-full w-fit duration-200 text-center before:duration-200 text-center font-mono tracking-[0.2em]">
+                    {product.starter.name[locale as keyof typeof product.starter.name]}
                   </h3>
                 </div>
               </SwiperSlide>
