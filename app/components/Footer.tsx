@@ -7,11 +7,15 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 
 const socialLinks = [
-  { icon: "/Instagram.svg", href: "https://www.instagram.com/vmotoofficial", label: "Instagram" },
-  { icon: "/Facebook.svg", href: "https://www.facebook.com/vmotosoco", label: "Facebook" },
-  { icon: "/Linkedin.svg", href: "https://www.linkedin.com/company/vmotosoco-officialpage", label: "LinkedIn" },
-  { icon: "/Youtube.svg", href: "https://www.youtube.com/c/VmotoSoco", label: "YouTube" },
-  { icon: "/X.svg", href: "https://x.com/vmotosoco", label: "Twitter" },
+  {
+    icon: "/Instagram.svg",
+    href: "https://www.instagram.com/vmotoksa/profilecard/?igsh=cDZoMnlycDhmcHRx",
+    label: "Instagram",
+  },
+  { icon: "/Facebook.svg", href: "https://www.facebook.com/share/1A5hNgds3W/?mibextid=wwXIfr", label: "Facebook" },
+  { icon: "/Linkedin.svg", href: "https://www.linkedin.com/company/vmoto-ksa/", label: "LinkedIn" },
+  { icon: "/Youtube.svg", href: "https://www.youtube.com/@VmotoKSA", label: "YouTube" },
+  { icon: "/X.svg", href: "https://x.com/vmotoksa?s=21&t=q206AU33SUUY2wDLYlGRGQ", label: "Twitter" },
 ];
 
 const footerLinks = {
