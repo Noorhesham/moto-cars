@@ -59,6 +59,8 @@
         "title": "Title",
         "content": "Content",
         "status": "Status",
+        "author": "Author",
+        "publishedAt": "Published At",
         "actions": "Actions"
       },
       "actions": {
@@ -100,6 +102,7 @@
         "address": "Address",
         "type": "Type",
         "status": "Status",
+        "registeredAt": "Registered At",
         "actions": "Actions"
       },
       "actions": {
@@ -171,13 +174,13 @@
     },
     "users": {
       "title": "Users",
-      "addusers": "add user",
-
+      "addUsers": "Add User",
       "columns": {
         "name": "Name",
         "email": "Email",
         "role": "Role",
         "status": "Status",
+        "lastLogin": "Last Login",
         "actions": "Actions"
       },
       "actions": {
@@ -211,6 +214,43 @@
     "time": {
       "hoursAgo": "hours ago",
       "daysAgo": "days ago"
+    },
+    "columns": {
+      "mainImage": "Main Image",
+      "name": "Name",
+      "title": "Title",
+      "address": "Address",
+      "category": "Category",
+      "features": "Features",
+      "colors": "Colors",
+      "status": "Status",
+      "actions": "Actions",
+      "date": "Date",
+      "author": "Author",
+      "description": "Description",
+      "lastModified": "Last Modified",
+      "createdAt": "Created At",
+      "updatedAt": "Updated At",
+      "publishedAt": "Published At",
+      "content": "Content",
+      "slug": "Slug",
+      "email": "Email",
+      "phone": "Phone",
+      "role": "Role",
+      "type": "Type",
+      "price": "Price",
+      "stock": "Stock",
+      "image": "Image"
+    },
+    "actions": {
+      "view": "View",
+      "edit": "Edit",
+      "delete": "Delete",
+      "publish": "Publish",
+      "unpublish": "Unpublish",
+      "duplicate": "Duplicate",
+      "export": "Export",
+      "import": "Import"
     }
   },
   "home": {

@@ -60,6 +60,8 @@
         "title": "العنوان",
         "content": "المحتوى",
         "status": "الحالة",
+        "author": "الكاتب",
+        "publishedAt": "تاريخ النشر",
         "actions": "الإجراءات"
       },
       "actions": {
@@ -99,6 +101,7 @@
         "address": "العنوان",
         "type": "النوع",
         "status": "الحالة",
+        "registeredAt": "تاريخ التسجيل",
         "actions": "الإجراءات"
       },
       "actions": {
@@ -171,12 +174,13 @@
     },
     "users": {
       "title": "المستخدمين",
-      "addusers": "اضافه مستخدم",
+      "addUsers": "إضافة مستخدم",
       "columns": {
         "name": "الاسم",
         "email": "البريد الإلكتروني",
         "role": "الدور",
         "status": "الحالة",
+        "lastLogin": "آخر تسجيل دخول",
         "actions": "الإجراءات"
       },
       "actions": {
