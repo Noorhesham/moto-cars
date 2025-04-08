@@ -87,7 +87,7 @@ function ActivityItem({ activity, t, locale }) {
       </div>
       <div className="ml-auto font-medium">
         {activity.type === "product" && (
-          <a href={`/${locale}/dashboard/products/${activity.slug}`} className="text-blue-600 hover:underline text-sm">
+          <a href={`/${locale}/product/${activity.slug}`} className="text-blue-600 hover:underline text-sm">
             {t("view")}
           </a>
         )}
